@@ -13,5 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         String test = "Đây là dữ liệu mới(kientvph17296)";
         Toast.makeText(this, "Đào Mạnh Toàn", Toast.LENGTH_SHORT).show();
+        //Le Dinh Duong commit
+        String name = "Lê Đình Dương - PH17450";
     }
 }
