@@ -1,5 +1,6 @@
 package com.example.quizzapp.guessword.model;
 
+
 public class Question {
     private String id;
     private String question;
