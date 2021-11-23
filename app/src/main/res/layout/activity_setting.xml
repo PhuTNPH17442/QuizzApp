@@ -7,10 +7,64 @@
     tools:context=".SettingActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Cài Đặt" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:orientation="vertical"
+        android:weightSum="3">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Cài Đặt"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:textColor="#080807"
+            android:background="#ead41b"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Credits"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:background="#941010"
+            android:gravity="left"
+            android:textStyle="normal"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chính Sách Người Dùng"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:background="#941010"
+            android:gravity="left"
+            android:textStyle="normal"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Âm thanh"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:background="#941010"
+            android:gravity="left"
+            android:textStyle="normal"/>
+
+
+    </LinearLayout>
+    <Button
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chấp Nhận Tùy Chỉnh"
+        android:textColor="#080807"
+        android:background="#ead41b"/>
 
 </LinearLayout>
