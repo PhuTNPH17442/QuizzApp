@@ -10,8 +10,7 @@ public class Question {
     public Question() {
     }
 
-    public Question(String id, String question, String answer, String theLoaiID) {
-        this.id = id;
+    public Question(String question, String answer, String theLoaiID) {
         this.question = question;
         this.answer = answer;
         this.theLoaiID = theLoaiID;
@@ -47,15 +46,5 @@ public class Question {
 
     public void setTheLoaiID(String theLoaiID) {
         this.theLoaiID = theLoaiID;
-    }
-
-    @Override
-    public String toString() {
-        return "Question{" +
-                "id='" + id + '\'' +
-                ", question='" + question + '\'' +
-                ", answer='" + answer + '\'' +
-                ", theLoaiID='" + theLoaiID + '\'' +
-                '}';
     }
 }

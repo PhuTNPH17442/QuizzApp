@@ -3,14 +3,13 @@ package com.example.quizzapp.guessword.model;
 
 public class TheLoai {
     private String id;
-    private String tenTheLoai;
+    private String name;
 
     public TheLoai() {
     }
 
-    public TheLoai(String id, String tenTheLoai) {
-        this.id = id;
-        this.tenTheLoai = tenTheLoai;
+    public TheLoai(String name) {
+        this.name = name;
     }
 
     public String getId() {
@@ -21,19 +20,16 @@ public class TheLoai {
         this.id = id;
     }
 
-    public String getTenTheLoai() {
-        return tenTheLoai;
+    public String getName() {
+        return name;
     }
 
-    public void setTenTheLoai(String tenTheLoai) {
-        this.tenTheLoai = tenTheLoai;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return "TheLoai{" +
-                "id='" + id + '\'' +
-                ", tenTheLoai='" + tenTheLoai + '\'' +
-                '}';
+        return getName();
     }
 }
