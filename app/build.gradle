@@ -4,10 +4,11 @@ plugins {
 
 android {
     compileSdk 30
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.example.quizzapp"
-        minSdk 21
+        minSdk 16
         targetSdk 30
         versionCode 1
         versionName "1.0"
