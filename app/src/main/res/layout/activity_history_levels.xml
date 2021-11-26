@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:background="#e2eadf"
+    tools:context=".quizzLDSection.Activities.AllLevelsActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LoadDate"
+        android:onClick="LoadData"
+        />
+
+    <TextView
+        android:id="@+id/tvLevel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="level 1"
+        android:textSize="22sp"/>
+    <TextView
+        android:id="@+id/tvLevel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="level 2"
+        android:textSize="22sp"/>
+    <TextView
+        android:id="@+id/tvLevel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="level 3"
+        android:textSize="22sp"/>
+
+    <Button
+        android:id="@+id/btnLevel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_background"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="Level 1"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/btnLevel2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginBottom="30dp"
+        android:padding="20dp"
+        android:gravity="center"
+        android:text="Level 2"
+        android:textSize="22sp"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:id="@+id/btnLevel3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:padding="20dp"
+        android:gravity="center"
+        android:text="Level 3"
+        android:textSize="22sp"
+        android:background="@drawable/button_background"/>
+
+</LinearLayout>
