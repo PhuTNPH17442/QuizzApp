@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizzApp">
-        <activity android:name=".Activities.QuizActivity"></activity>
-        <activity android:name=".AllLevelsActivity" />
-        <activity android:name=".CategoryActivity" />
+        <activity android:name=".MenuGameActivity"></activity>
+        <activity android:name=".quizzLDSection.Activities.QuizActivity" />
+        <activity android:name=".quizzLDSection.Activities.AllLevelsActivity" />
+        <activity android:name=".quizzLDSection.Activities.CategoryActivity" />
         <activity
             android:name=".guessword.MainActivity2"
             android:exported="false" />

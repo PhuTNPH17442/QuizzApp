@@ -9,7 +9,7 @@
     android:layout_gravity="center_horizontal"
     android:layout_margin="30dp"
     android:rowCount="3"
-    tools:context=".CategoryActivity">
+    tools:context=".quizzLDSection.Activities.CategoryActivity">
 
     <Button
         android:id="@+id/btn_All"
