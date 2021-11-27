@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="#e2eadf"
+    android:orientation="vertical"
     tools:context=".MenuGameActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chọn chế độ chơi"
+        android:textAlignment="center"
+        android:layout_marginBottom="45dp"
+        android:layout_marginTop="30dp"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/btn_do_vui"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="Đố vui"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/when_answer_correct"
+        android:paddingVertical="5dp"
+        android:textSize="35sp"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btn_doan_hinh"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="Đoán hình"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_setting"
+        android:paddingVertical="5dp"
+        android:textSize="35sp"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btn_doan_chu"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:text="Đoán chữ"
+        android:background="@drawable/when_answer_wrong"
+        android:paddingVertical="5dp"
+        android:textSize="35sp"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>
