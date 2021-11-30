@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/teal_200"
-    tools:context=".ResultActivity">
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="30sp"
-            android:text="You Scroe"
+            android:text="You Score"
             android:textStyle="bold"
             android:textAlignment="center"
             android:paddingTop="100dp"

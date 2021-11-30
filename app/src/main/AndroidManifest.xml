@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizzApp">
-        <activity android:name=".guess_the_picture.MainActivity_start_doan_hinh"></activity>
+        <activity android:name=".doan_hinh.MainActivity_start_doan_hinh"></activity>
         <activity android:name=".MenuGameActivity" />
         <activity android:name=".quizzLDSection.Activities.AllLevelsActivity" />
         <activity android:name=".quizzLDSection.Activities.CategoryActivity" />

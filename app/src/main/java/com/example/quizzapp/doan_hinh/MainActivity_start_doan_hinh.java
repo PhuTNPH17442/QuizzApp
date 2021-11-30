@@ -1,4 +1,4 @@
-package com.example.quizzapp.guess_the_picture;
+package com.example.quizzapp.doan_hinh;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,4 +1,4 @@
-package com.example.quizzapp.guess_the_picture;
+package com.example.quizzapp.doan_hinh;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -52,7 +52,7 @@ public class MainActivity_doan_hinh extends AppCompatActivity {
                 SystemClock.sleep(1000);
                 if (QuestionNum == mQuestions.getLength()-1){
                     Intent intent_result = new Intent(MainActivity_doan_hinh.this,ResultActivity.class);
-                    intent_result.putExtra("totalQuetions",mQuestions.getLength());
+                    intent_result.putExtra("totalQuestions",mQuestions.getLength());
                     intent_result.putExtra("finalScore",score);
                     startActivity(intent_result);
 

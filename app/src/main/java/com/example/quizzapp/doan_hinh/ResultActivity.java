@@ -1,4 +1,4 @@
-package com.example.quizzapp.guess_the_picture;
+package com.example.quizzapp.doan_hinh;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,8 +28,9 @@ public class ResultActivity extends AppCompatActivity {
 
         int mPercent = finalScore * 100/ totalQuetions;
 
-        txtPercent.setText(String.format("%s%%",Integer.toString(Integer.valueOf(mPercent))));
-        String final_Score = getString(R.string.txtCorrectScore,finalScore,totalQuetions);
+
+        txtPercent.setText(getString(R.string.score_percent, mPercent));
+        String final_Score = getString(R.string.txtCorrectScore,finalScore, 10);
 
         txtCorect.setText(final_Score);
 
