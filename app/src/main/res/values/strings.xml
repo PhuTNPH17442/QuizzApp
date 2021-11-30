@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">QuizzApp</string>
+    <string name="txtCorrectScore">"You've got %1$s out of %2$ correct."</string>
 </resources>
