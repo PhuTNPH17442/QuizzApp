@@ -6,7 +6,7 @@
     android:gravity="center"
     android:background="#e2eadf"
     android:orientation="vertical"
-    tools:context=".Activities.SplashScreenActivity">
+    tools:context=".SplashScreenActivity">
 
     <TextView
         android:id="@+id/tvLogoText"
@@ -24,7 +24,24 @@
         android:id="@+id/imgLogo"
         android:src="@drawable/logo"
         android:layout_width="360dp"
-        android:layout_height="360dp"/>
+        android:layout_height="360dp"
+        android:layout_marginBottom="20dp"/>
 
+    <TextView
+        android:id="@+id/tvProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Đang tải..."
+        android:visibility="visible"
+        android:layout_gravity="left"
+        android:layout_marginHorizontal="30dp"/>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pro"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:paddingHorizontal="20dp" />
 
 </LinearLayout>
