@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.quizzapp.doan_hinh.MainActivity_doan_hinh;
+import com.example.quizzapp.doan_hinh.MainActivity_start_doan_hinh;
 import com.example.quizzapp.quizzLDSection.Activities.CategoryActivity;
 
 public class    MenuGameActivity extends AppCompatActivity {
@@ -37,7 +38,7 @@ public class    MenuGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MenuGameActivity.this, MainActivity_doan_hinh.class);
+                Intent intent = new Intent(MenuGameActivity.this, MainActivity_start_doan_hinh.class);
                 startActivity(intent);
 
             }
