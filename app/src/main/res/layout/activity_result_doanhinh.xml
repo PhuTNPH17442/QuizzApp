@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/teal_200"
-    >
+    tools:context=".doan_hinh.ResultActivity_doan_hinh">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"

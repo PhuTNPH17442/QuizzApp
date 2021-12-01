@@ -23,7 +23,7 @@
             android:gravity="center"
             android:textSize="25dp"
             android:textColor="#080807"
-            android:background="#ead41b"
+            android:background="#F4DB57"
             android:layout_weight="1"/>
         <Button
             android:layout_width="match_parent"
@@ -32,7 +32,7 @@
             android:textSize="15dp"
             android:layout_weight="1"
             android:textColor="#ffffff"
-            android:background="#941010"
+            android:background="#A55353"
             android:gravity="left"
             android:textStyle="normal"/>
         <Button
@@ -42,7 +42,7 @@
             android:textSize="15dp"
             android:layout_weight="1"
             android:textColor="#ffffff"
-            android:background="#941010"
+            android:background="#A55353"
             android:gravity="left"
             android:textStyle="normal"/>
         <Button
@@ -52,7 +52,7 @@
             android:textSize="15dp"
             android:layout_weight="1"
             android:textColor="#ffffff"
-            android:background="#941010"
+            android:background="#A55353"
             android:gravity="left"
             android:textStyle="normal"/>
 
@@ -65,6 +65,6 @@
         android:layout_height="wrap_content"
         android:text="Chấp Nhận Tùy Chỉnh"
         android:textColor="#080807"
-        android:background="#ead41b"/>
+        android:background="#F4DB57"/>
 
 </LinearLayout>

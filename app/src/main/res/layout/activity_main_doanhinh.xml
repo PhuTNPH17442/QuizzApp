@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFEB3B"
-    tools:context=".MainActivity">
+    tools:context=".doan_hinh.MainActivity_doan_hinh">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

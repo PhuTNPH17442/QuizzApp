@@ -32,19 +32,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                Intent intent = new Intent(MainActivity.this, MenuGameActivity.class);
                 startActivity(intent);
             }
         });
 
-//        btnSetting.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        btnSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -59,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
 
-                            setResult(RESULT_OK, new Intent().putExtra("Exit", true));
+//                            setResult(RESULT_OK, new Intent().putExtra("Exit", true));
+                            android.os.Process.killProcess(android.os.Process.myPid());
+                            System.exit(1);
                             finish();
                         }
                     }).create().show();

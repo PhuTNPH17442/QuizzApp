@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#e2eadf"
+    tools:context=".quizzLDSection.Activities.ResultActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="30dp"
+        android:paddingStart="30dp"
+        android:background="@drawable/question_container_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/result_tv_High_Score"
+            android:text="Điểm cao nhất: "
+            android:textSize="40sp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textAlignment="textStart"
+            android:layout_marginBottom="7dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start" />
+        <TextView
+            android:id="@+id/result_tv_total_Ques"
+            android:text="Tong diem: "
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:textAlignment="textStart"
+            android:layout_marginBottom="7dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start" />
+        <TextView
+            android:id="@+id/result_tv_Correct_Ques"
+            android:text="Tra loi dung: "
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:textAlignment="textStart"
+            android:layout_marginBottom="7dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start" />
+        <TextView
+            android:id="@+id/result_tv_Wrong_Ques"
+            android:text="Tra loi sai: "
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:textAlignment="textStart"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/resuLt_btn_playAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Chơi lại"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:gravity="center_horizontal" />
+            <Button
+                android:id="@+id/result_btn_mainmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Trang chủ"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:gravity="center_horizontal" />
+            <Button
+                android:id="@+id/result_btn_nextLevel"
+                android:onClick="sendToLevelAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tiếp tục"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

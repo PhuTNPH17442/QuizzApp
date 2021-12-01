@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizzApp">
+        <activity android:name=".doan_hinh.MainActivity_doan_hinh" />
+        <activity android:name=".doan_hinh.ResultActivity_doan_hinh" />
         <activity android:name=".doan_hinh.MainActivity_start_doan_hinh"></activity>
         <activity android:name=".MenuGameActivity" />
         <activity android:name=".quizzLDSection.Activities.AllLevelsActivity" />
         <activity android:name=".quizzLDSection.Activities.CategoryActivity" />
-        <activity android:name=".quizzLDSection.Activities.PlayActivity" />
         <activity android:name=".quizzLDSection.Activities.ResultActivity" />
         <activity android:name=".quizzLDSection.Activities.QuizActivity" />
         <activity android:name=".quizzLDSection.Activities.HistoryLevelsActivity" />

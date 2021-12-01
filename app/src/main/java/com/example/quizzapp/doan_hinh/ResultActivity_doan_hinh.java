@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizzapp.R;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity_doan_hinh extends AppCompatActivity {
     TextView txtCorect, txtPercent;
     private int totalQuetions;
     private int finalScore;
@@ -30,7 +30,7 @@ public class ResultActivity extends AppCompatActivity {
 
 
         txtPercent.setText(getString(R.string.score_percent, mPercent));
-        String final_Score = getString(R.string.txtCorrectScore,finalScore, 10);
+        String final_Score = getString(R.string.txtCorrectScore,finalScore, totalQuetions);
 
         txtCorect.setText(final_Score);
 
@@ -38,7 +38,7 @@ public class ResultActivity extends AppCompatActivity {
         btnRestar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ResultActivity.super.onBackPressed();
+                ResultActivity_doan_hinh.super.onBackPressed();
             }
         });
     }
