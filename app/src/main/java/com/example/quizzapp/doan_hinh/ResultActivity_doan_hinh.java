@@ -28,7 +28,6 @@ public class ResultActivity_doan_hinh extends AppCompatActivity {
 
         int mPercent = finalScore * 100/ totalQuetions;
 
-
         txtPercent.setText(getString(R.string.score_percent, mPercent));
         String final_Score = getString(R.string.txtCorrectScore,finalScore, totalQuetions);
 

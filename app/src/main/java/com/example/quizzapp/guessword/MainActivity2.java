@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Random;
 
 public class MainActivity2 extends AppCompatActivity {
-    String[] question = new String[]{"Animals", "Singapore", "Manchester United", "Vegetable", "Pigs", ""
+    String[] question = new String[]{"Animals", "Singapore", "Manchester United", "Vegetable", "Pigs"
     };
     String que;
     Random random;
@@ -62,6 +62,8 @@ public class MainActivity2 extends AppCompatActivity {
                 } else if (edYourAnswer.getText().toString().equalsIgnoreCase(que)) {
                     Dialog dialog = new Dialog(MainActivity2.this);
                     dialog.setContentView(R.layout.correct_dialog);
+                    TextView text = dialog.findViewById(R.id.tv_score);
+                    text.setText(""+que);
                     Button hide = dialog.findViewById(R.id.btn_correct_dialog);
                     dialog.show();
                     hide.setOnClickListener(new View.OnClickListener() {
@@ -109,7 +111,7 @@ public class MainActivity2 extends AppCompatActivity {
                 dialog.setContentView(R.layout.showanswer);
                 dialog.show();
                 TextView text = dialog.findViewById(R.id.tvgoiy);
-                text.setText("" +txtRightAnswer);
+                text.setText("" + que);
                 Button hide = dialog.findViewById(R.id.btntt);
                 hide.setOnClickListener(new View.OnClickListener() {
                     @Override
