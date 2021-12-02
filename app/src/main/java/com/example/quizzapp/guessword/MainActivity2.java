@@ -50,7 +50,6 @@ public class MainActivity2 extends AppCompatActivity {
         txtCorrectAnswer = findViewById(R.id.txtCorrectAnswer);
         txtQuestionContainer = findViewById(R.id.txtQuestionContainer);
         txtRightAnswer = findViewById(R.id.txtRightAnswer);
-
         txtCauHoi = findViewById(R.id.txtCauHoi);
         txtDiem = findViewById(R.id.txtDiem);
         txtCauDung = findViewById(R.id.txtSLCauDung);
