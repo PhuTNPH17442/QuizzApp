@@ -3,6 +3,7 @@
     package="com.example.quizzapp">
 
     <application
+        android:name=".AppController"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
@@ -12,13 +13,7 @@
         <activity
             android:name=".guessword.ManHinhChinh"
             android:exported="false" />
-        <activity android:name=".SplashScreenActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".doan_hinh.MainActivity_doan_hinh" />
         <activity android:name=".doan_hinh.ResultActivity_doan_hinh" />
         <activity android:name=".doan_hinh.MainActivity_start_doan_hinh" />
