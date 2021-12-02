@@ -10,9 +10,11 @@ import android.widget.Toast;
 
 import com.example.quizzapp.doan_hinh.MainActivity_doan_hinh;
 import com.example.quizzapp.doan_hinh.MainActivity_start_doan_hinh;
+import com.example.quizzapp.guessword.MainActivity2;
+import com.example.quizzapp.guessword.ManHinhChinh;
 import com.example.quizzapp.quizzLDSection.Activities.CategoryActivity;
 
-public class    MenuGameActivity extends AppCompatActivity {
+public class MenuGameActivity extends AppCompatActivity {
 
     private long backPressedTime;
 
@@ -43,8 +45,14 @@ public class    MenuGameActivity extends AppCompatActivity {
 
             }
         });
+        btnDoanChu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuGameActivity.this, ManHinhChinh.class);
+                startActivity(intent);
+            }
+        });
     }
-
 //    @Override
 //    public void onBackPressed() {
 //        if (backPressedTime + 2000 > System.currentTimeMillis()) {
