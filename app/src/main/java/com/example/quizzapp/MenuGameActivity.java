@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.example.quizzapp.doan_hinh.MainActivity_doan_hinh;
 import com.example.quizzapp.quizzLDSection.Activities.CategoryActivity;
 
-public class    MenuGameActivity extends AppCompatActivity {
+public class MenuGameActivity extends AppCompatActivity {
 
     private long backPressedTime;
 

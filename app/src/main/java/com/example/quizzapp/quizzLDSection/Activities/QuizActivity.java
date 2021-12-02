@@ -145,7 +145,7 @@ public class QuizActivity extends AppCompatActivity {
                         rb3.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_background));
                         rb4.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.button_background));
 
-                    break;
+                        break;
                     case R.id.radio_button2:
 
                         rb2.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.when_option_selected));
@@ -190,7 +190,6 @@ public class QuizActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 
@@ -375,6 +374,7 @@ public class QuizActivity extends AppCompatActivity {
         rbSelected.setTextColor(Color.BLACK);
     }
 
+    //Hiển thị câu hỏi
     public void showQuestions() {
 
         rbGroup.clearCheck();
@@ -405,8 +405,7 @@ public class QuizActivity extends AppCompatActivity {
 
 
         } else {
-            //Khi chạy hết số câu hỏi sẽ hiện ra dialog
-
+            //Khi chạy hết số câu hỏi sẽ hiện ra thông báo
             Toast.makeText(this, "Hoàn thành Quiz", Toast.LENGTH_SHORT).show();
 
             rb1.setClickable(false);
@@ -428,8 +427,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
 
-                // timer code
-
+    // code bắt đầu đếm ngược
     private void startCountDown() {
 
         countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
@@ -451,6 +449,7 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
+    //code update đếm ngược từng giây
     private void updateCountDownText() {
 
         int minutes = (int) (timeLeftInMillis/1000) / 60;
@@ -539,6 +538,8 @@ public class QuizActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+
+                //Chuyển dữ liệu đến ResultActivity
                 Intent resultData = new Intent(QuizActivity.this, ResultActivity.class);
 
                 resultData.putExtra("UserScore", score);
@@ -569,6 +570,7 @@ public class QuizActivity extends AppCompatActivity {
         backPressedTime = System.currentTimeMillis();
     }
 
+    //Mở khóa levels
     private void unlockLevels() {
 
         unlockAllLevels();

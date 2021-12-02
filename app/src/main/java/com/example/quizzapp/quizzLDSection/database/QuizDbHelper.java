@@ -273,8 +273,10 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 QuestionTable.COLUMN_LEVELS_ID
         };
 
+        //WHERE clause
         String selection = QuestionTable.COLUMN_LEVELS_ID + " = ? " +
                 " AND " + QuestionTable.COLUMN_CATEGORY + " = ? ";
+        //WHERE clause arguments
         String selecionArgs[] = {String.valueOf(levelsID), category};
 
         Cursor c = db.query(QuestionTable.TABLE_NAME,
