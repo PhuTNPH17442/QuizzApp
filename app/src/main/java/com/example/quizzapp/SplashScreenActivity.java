@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -22,7 +23,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     ProgressBar progressBar;
     TextView tvSplashText, tvProgress;
     ImageView imgLogo;
-    
+
     private int progressStatus = 0;
     private Handler mHandler = new Handler();
 
@@ -35,6 +36,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         tvProgress = findViewById(R.id.tvProgress);
         tvSplashText = findViewById(R.id.tvLogoText);
         imgLogo = findViewById(R.id.imgLogo);
+
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.transition);
         imgLogo.setAnimation(animation);
@@ -76,9 +78,17 @@ public class SplashScreenActivity extends AppCompatActivity {
                         }
                     });
                 }
+//                mHandler.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+////                        tvProgress.setVisibility(View.VISIBLE);
+//                        tvProgress.setText("Đã tải xong...");
+//                    }
+//                });
             }
         }).start();
     }
+
 
     private void GotoPlayActivity() {
 

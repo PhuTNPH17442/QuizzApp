@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -76,5 +77,19 @@ public class MenuGameActivity extends AppCompatActivity {
         finish();
 
         super.onBackPressed();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("BUGBUG","onStop() in MenuGameActivity");
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("BUGBUG","onDestroy() in MenuGameActivity");
+        finish();
     }
 }
