@@ -19,7 +19,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.quizzapp.MainActivity;
 import com.example.quizzapp.quizzLDSection.Audio.PlayAudioForAnswer;
 import com.example.quizzapp.quizzLDSection.Dialog.CorrectDialog;
 import com.example.quizzapp.quizzLDSection.Dialog.TimerDialog;
@@ -60,8 +59,6 @@ public class QuizActivity extends AppCompatActivity {
     int FLAG = 0;
 
     int score = 0;
-
-    private int totalSizeOfQuiz = 0;
 
     private static final long COUNT_IN_MILLIS = 30000;
     private CountDownTimer countDownTimer;

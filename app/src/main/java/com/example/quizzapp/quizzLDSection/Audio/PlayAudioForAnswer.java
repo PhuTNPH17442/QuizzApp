@@ -42,6 +42,7 @@ public class PlayAudioForAnswer {
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
+                //bắt đầu chạy
                 mediaPlayer.start();
             }
         });
@@ -49,6 +50,7 @@ public class PlayAudioForAnswer {
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                //ngừng
                 mediaPlayer.release();
             }
         });
