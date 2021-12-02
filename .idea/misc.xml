@@ -5,24 +5,11 @@
       <map>
         <entry key="..\:/QuizzApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/QuizzApp/app/src/main/res/layout/activity_setting.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/drawable/custombutton.xml" value="0.2755208333333333" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_all_levels.xml" value="0.259375" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_category.xml" value="0.259375" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_history_levels.xml" value="0.259375" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_main.xml" value="0.24682971014492755" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_main2.xml" value="0.24682971014492755" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_main_doanhinh.xml" value="0.259375" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_main_start_doan_hinh.xml" value="0.259375" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_man_hinh_chinh.xml" value="0.259375" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_menu_game.xml" value="0.259375" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_quiz.xml" value="0.259375" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_result_doanhinh.xml" value="0.259375" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_setting.xml" value="0.24682971014492755" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/correct_dialog.xml" value="0.259375" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/custombutton.xml" value="0.259375" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/showanswer.xml" value="0.259375" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/timer_dialog.xml" value="0.259375" />
-        <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/wrong_dialog.xml" value="0.259375" />
       </map>
     </option>
   </component>

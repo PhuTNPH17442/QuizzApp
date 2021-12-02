@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class QuizDbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "GoQuiz.db";
-    private static final int DATBASE_VERSION = 3;
+    private static final int DATBASE_VERSION = 4;
 
     private SQLiteDatabase db;
 
@@ -117,6 +117,22 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 Questions.CATEGORY_GEOGRAPHY, Questions.LEVEL1);
         addQuestions(qg4);
 
+        Questions qg5 = new Questions("Khu rừng mưa nhiệt đới lớn nhất thế giới nằm ở đâu?","Causasus","Pacific Temperate","Tongass","Amazon", 4,
+                Questions.CATEGORY_GEOGRAPHY, Questions.LEVEL2);
+        addQuestions(qg5);
+
+        Questions qg6 = new Questions("Gấu trúc khổng lồ ăn gì là chủ yếu?","Tre","Chuối","Cỏ","Thịt", 1,
+                Questions.CATEGORY_GEOGRAPHY, Questions.LEVEL2);
+        addQuestions(qg6);
+
+        Questions qg7 = new Questions("Nơi ghi nhận có nhiệt độ lạnh nhất trên trái đất","Trạm Vostok Soviet","Verkhoyansk","Yakutsk","Daily Mail", 1,
+                Questions.CATEGORY_GEOGRAPHY, Questions.LEVEL3);
+        addQuestions(qg7);
+
+        Questions qg8 = new Questions("Trận bão gây thiệt hại lớn nhất trong lịch sử Hoa Kỳ trước năm 2021 là gì?","Bão Hugo","Bão Katrina","Bão Juan","Bão Maria", 2,
+                Questions.CATEGORY_GEOGRAPHY, Questions.LEVEL3);
+        addQuestions(qg8);
+
 
         //HISTORY
         Questions q4 = new Questions("Kim tự thác Kheops được xây dựng trong bao nhiêu năm?","Hơn 1 năm","Hơn 20 năm","5 năm","Hơn 8 năm", 2,
@@ -124,20 +140,36 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         addQuestions(q4);
 
         Questions qh1 = new Questions("Cuộc chiến tranh lớn nào đã kết thúc vào năm 1975","Chiến tranh Việt Nam","Nội chiến Guatemalan","Chiến tranh bụi rậm Rhodesi","Nội chiến Mozambique", 1,
-                Questions.CATEGORY_HISTORY, Questions.LEVEL2);
+                Questions.CATEGORY_HISTORY, Questions.LEVEL1);
         addQuestions(qh1);
 
         Questions qh2 = new Questions("Anh em nhà Wright đã chế tạo ra thứ gì?","Đầu máy hơi nước","Máy bay cất cánh thành công đầu tiên","Lò vi sóng","Xe máy", 2,
                 Questions.CATEGORY_HISTORY, Questions.LEVEL3);
         addQuestions(qh2);
 
-        Questions qh3 = new Questions("Có bao nhiêu quốc gia tham gia sáng lập tổ chức Liên hợp quốc?", "35", "48", "50", "55", 4,
+        Questions qh3 = new Questions("Có bao nhiêu quốc gia tham gia sáng lập tổ chức Liên hợp quốc?", "35", "48", "50", "55", 3,
                 Questions.CATEGORY_HISTORY, Questions.LEVEL3);
         addQuestions(qh3);
 
         Questions qh4 = new Questions("Ai được sinh ra ở số 17 đường Bruton, London vào ngày 21/4/1926 lúc 2 giờ 40 phút và được sinh mổ?", "Grace Kelly", "Roger Moore", "David Attenborough", "Nữ hoàng Elizabeth II", 4,
                 Questions.CATEGORY_HISTORY, Questions.LEVEL3);
         addQuestions(qh4);
+
+        Questions qh5 = new Questions("Thành phố đầu tiên ở Nhật Bản bị ném bom nguyên tử năm 1945 là thành phố nào?", "Hiroshima", "Niihama", "Takahama", "Nagasaki", 1,
+                Questions.CATEGORY_HISTORY, Questions.LEVEL2);
+        addQuestions(qh5);
+
+        Questions qh6 = new Questions("Jack the Ripper(Jack Đồ Tể) là ai?", "Kẻ giết người hàng loạt", "Người sáng tác thơ", "Nhà vô địch đấm bốc người Anh", "Người phát minh ra máy băm", 1,
+                Questions.CATEGORY_HISTORY, Questions.LEVEL2);
+        addQuestions(qh6);
+
+        Questions qh7 = new Questions("An Dương Vương có tên thật là gì", "Không có lựa chọn đúng", "Triệu Đà", "Thục Phán", "Thục Chế", 3,
+                Questions.CATEGORY_HISTORY, Questions.LEVEL1);
+        addQuestions(qh7);
+
+        Questions qh8 = new Questions("Alan Mathison Turing là ai?", "Nhà soạn nhạc", "Nhà toán học, logic học và mật mã học", "Ngôi sao nhạc Rock", "Tiểu thuyết gia", 2,
+                Questions.CATEGORY_HISTORY, Questions.LEVEL2);
+        addQuestions(qh8);
 
         // SCIENCE
         Questions q5 = new Questions("Tên thường gọi của Sodium Chloride là gì?","Muối","Giấm","Đường","Chất tẩy trắng", 1,
@@ -241,8 +273,10 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 QuestionTable.COLUMN_LEVELS_ID
         };
 
+        //WHERE clause
         String selection = QuestionTable.COLUMN_LEVELS_ID + " = ? " +
                 " AND " + QuestionTable.COLUMN_CATEGORY + " = ? ";
+        //WHERE clause arguments
         String selecionArgs[] = {String.valueOf(levelsID), category};
 
         Cursor c = db.query(QuestionTable.TABLE_NAME,

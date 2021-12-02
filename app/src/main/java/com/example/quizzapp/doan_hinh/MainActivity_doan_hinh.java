@@ -18,8 +18,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizzapp.R;
+import com.example.quizzapp.quizzLDSection.Audio.PlayAudioForAnswer;
 
-public class MainActivity_doan_hinh extends AppCompatActivity {
+public class    MainActivity_doan_hinh extends AppCompatActivity {
     private ImageView mQuizImage;
     private String mAnswer;
     private int score = 0;
@@ -27,6 +28,9 @@ public class MainActivity_doan_hinh extends AppCompatActivity {
     private int QuestionNum = 0;
     TextView mQuestionView, mQuizNumView;
     private Questions mQuestions = new Questions();
+
+    int FLAG = 0;
+    PlayAudioForAnswer playAudioForAnswer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,8 @@ public class MainActivity_doan_hinh extends AppCompatActivity {
         mQuizNumView = findViewById(R.id.quiznumber);
         Button btnSubmit = findViewById(R.id.btnsubmit);
 
+        playAudioForAnswer = new PlayAudioForAnswer(this);
+
         updateQuestion();
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
@@ -44,8 +50,12 @@ public class MainActivity_doan_hinh extends AppCompatActivity {
                 if (mQuestions.getType(QuestionNum) == "radiobutton"){
                     if (mQuestions.getCoorect(QuestionNum).equals(mAnswer)){
                         score++;
+                        FLAG = 1;
+                        playAudioForAnswer.setAudioForAnswer(FLAG);
                         displayCoorect();
                     }else {
+                        FLAG = 2;
+                        playAudioForAnswer.setAudioForAnswer(FLAG);
                         displayWrong();
                     }
                 }
@@ -83,10 +93,10 @@ public class MainActivity_doan_hinh extends AppCompatActivity {
     }
 
     private void displayCoorect(){
-        Toast.makeText(this, "Coorect", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Đáp án chính xác", Toast.LENGTH_SHORT).show();
     }
     private void displayWrong(){
-        Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Đáp án sai", Toast.LENGTH_SHORT).show();
     }
 
     private void updateQuestion(){
