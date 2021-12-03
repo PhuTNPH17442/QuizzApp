@@ -23,7 +23,7 @@ import java.util.Random;
 
 public class MainActivity2 extends AppCompatActivity {
     String[] question = new String[]{"Animals", "Singapore", "United", "Vegetable", "Pigs", "One", "Two", "Three", "Four",
-            "Six", "Seven", "Eight", "Night", "Ten", "Eleven", "ConCac", "Football"
+            "Six", "Seven", "Eight", "Night", "Ten", "Eleven", "Football"
     };
     String que;
     Random random;
@@ -32,9 +32,11 @@ public class MainActivity2 extends AppCompatActivity {
     EditText edYourAnswer;
     Button btnCheck, btnShow, btnNext;
 
+    //audio
     private PlayAudioForAnswer playAudioForAnswer;
     int FLAG = 0;
 
+    //tính điểm,câu đúng,sai
     private int correctAns = 0, wrongAns = 0;
     int score = 0;
 
@@ -78,7 +80,7 @@ public class MainActivity2 extends AppCompatActivity {
                 if (edYourAnswer.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "Bạn chưa điền đáp án !!!", Toast.LENGTH_SHORT).show();
                 } else if (edYourAnswer.getText().toString().equalsIgnoreCase(que)) {
-
+                    //dialog đáp án đúng
                     Dialog dialog = new Dialog(MainActivity2.this);
                     dialog.setContentView(R.layout.correct_dialog);
                     TextView text = dialog.findViewById(R.id.tv_score);
@@ -86,9 +88,11 @@ public class MainActivity2 extends AppCompatActivity {
 
                     Button hide = dialog.findViewById(R.id.btn_correct_dialog);
                     correctAns++;
-                    txtCauDung.setText("Cau dung :" + String.valueOf(correctAns));
+                    txtCauDung.setText("Câu đúng :" + String.valueOf(correctAns));
+                    //set audio
                     FLAG = 1;
                     playAudioForAnswer.setAudioForAnswer(FLAG);
+                    //set điểm
                     score += 20;
                     txtDiem.setText("Điểm: " + String.valueOf(score));
                     dialog.show();
@@ -112,7 +116,7 @@ public class MainActivity2 extends AppCompatActivity {
                     FLAG = 2;
                     playAudioForAnswer.setAudioForAnswer(FLAG);
                     wrongAns++;
-                    txtCauSai.setText("Cau sai" + String.valueOf(wrongAns));
+                    txtCauSai.setText("Câu sai:" + String.valueOf(wrongAns));
                     dialog.show();
                     hide.setOnClickListener(new View.OnClickListener() {
                         @Override

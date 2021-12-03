@@ -5,7 +5,7 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAC47A"
+    android:background="#2AA0DC90"
     android:gravity="center"
     tools:context=".guessword.MainActivity2">
 
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Question 1/10"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,48 +26,48 @@
         android:id="@+id/txtDiem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Score 00/100"
+        android:text="Điểm: 00/100"
         android:textColor="@color/black"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txtCorrectAnswer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCauHoi"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintVertical_bias="0.14" />
 
     <TextView
         android:id="@+id/txtSLCauDung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Correct : 0"
-        android:textColor="@color/purple_500"
-        android:textSize="15dp"
+        android:text="Câu đúng : 0"
+        android:textColor="#1CA80C"
+        android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txtCorrectAnswer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCauHoi"
-        app:layout_constraintVertical_bias="0.029" />
+        app:layout_constraintVertical_bias="0.323" />
 
     <TextView
         android:id="@+id/txtCauSai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Wrong : 0"
+        android:text="Câu sai : 0"
         android:textColor="#D10A0A"
-        android:textSize="15dp"
+        android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txtCorrectAnswer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.672"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCauHoi"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.764" />
 
     <TextView
         android:id="@+id/txtTime"
@@ -76,26 +76,26 @@
         android:layout_marginTop="24dp"
         android:text="00:30"
         android:textColor="@color/black"
-        android:textSize="15dp"
+        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txtCorrectAnswer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.618"
+        app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toEndOf="@+id/txtCauSai"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintVertical_bias="0.323" />
 
     <TextView
         android:id="@+id/txtCorrectAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="120dp"
         android:text="Đáp án đúng là"
         android:textSize="35dp"
         android:textStyle="bold"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCauHoi" />
 
@@ -103,7 +103,7 @@
         android:id="@+id/txtRightAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="4dp"
         android:text="TextView"
         android:textSize="35dp"
         android:textStyle="bold"
@@ -125,9 +125,11 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRightAnswer"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.048" />
 
     <EditText
+        android:backgroundTint="#DDCDCD"
+        android:background="@drawable/custombutton"
         android:id="@+id/edYourAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -143,6 +145,7 @@
         app:layout_constraintVertical_bias="0.083" />
 
     <Button
+        android:background="@drawable/custombutton"
         android:id="@+id/btnShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -151,7 +154,7 @@
         android:text="Trợ Giúp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edYourAnswer"
         app:layout_constraintVertical_bias="0.0" />
@@ -160,16 +163,18 @@
         android:id="@+id/btnCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/custombutton"
         android:backgroundTint="#8BC34A"
         android:text="Kiểm Tra"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toEndOf="@+id/btnShow"
         app:layout_constraintTop_toBottomOf="@+id/edYourAnswer"
-        app:layout_constraintVertical_bias="0.061" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <Button
+        android:background="@drawable/custombutton"
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
