@@ -2,4 +2,6 @@
     <string name="app_name">QuizzApp</string>
     <string name="txtCorrectScore" formatted="false">"You've got %1$d out of %2$d correct."</string>
     <string name="score_percent">%d%%</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/QuizzApp/app/src/main/res/drawable/bg_circle_red.xml" value="0.14270833333333333" />
+        <entry key="..\:/QuizzApp/app/src/main/res/layout/activity_credits.xml" value="0.10400000000000001" />
         <entry key="..\:/QuizzApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/QuizzApp/app/src/main/res/layout/activity_setting.xml" value="0.1793478260869565" />
+        <entry key="..\:/QuizzApp/app/src/main/res/layout/fragment_credits.xml" value="0.1265625" />
+        <entry key="..\:/QuizzApp/app/src/main/res/layout/fragment_credits2.xml" value="0.1265625" />
+        <entry key="..\:/QuizzApp/app/src/main/res/layout/fragment_credits3.xml" value="0.1265625" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_main.xml" value="0.24682971014492755" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_main2.xml" value="0.24682971014492755" />
         <entry key="..\:/Users/LENOVO/AndroidStudioProjects/QuizzApp/app/src/main/res/layout/activity_main_doanhinh.xml" value="0.259375" />
