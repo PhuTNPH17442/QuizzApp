@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import me.relex.circleindicator.CircleIndicator;
 
 public class CreditsActivity extends AppCompatActivity {

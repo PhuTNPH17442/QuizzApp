@@ -631,7 +631,6 @@ public class QuizActivity extends AppCompatActivity {
             UNLOCK_HL2 = correctAns;
             //Tra loi dung >= 3 cau hoi de unlock level
             if (UNLOCK_HL2 >= 3) {
-
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putInt(Constant.KEY_HIS_LEVEL_2, 1);
                 editor.apply();
@@ -641,7 +640,6 @@ public class QuizActivity extends AppCompatActivity {
                 editor1.apply();
 
             }
-
         } else if (levelsID == 2 && categoryValue.equals("History")) {
 
             UNLOCK_AL3 = correctAns;

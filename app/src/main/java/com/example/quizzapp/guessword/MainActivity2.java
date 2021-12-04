@@ -157,7 +157,7 @@ public class MainActivity2 extends AppCompatActivity {
 //                txtQuestionContainer.setText(mixWords(que));
                 if (edYourAnswer.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "Bạn chưa điền đáp án", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     showQuestion();
                 }
                 edYourAnswer.setText("");
@@ -262,27 +262,18 @@ public class MainActivity2 extends AppCompatActivity {
         } else {
             txtTime.setTextColor(Color.BLACK);
         }
-
         if (timeLeftInMillis == 0) {
-
-            handler.postDelayed(new Runnable() {
+            Dialog dialog = new Dialog(MainActivity2.this);
+            dialog.setContentView(R.layout.timer_dialog);
+            dialog.show();
+            Button hide = dialog.findViewById(R.id.btn_timer);
+            hide.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void run() {
-
-                    Dialog dialog = new Dialog(MainActivity2.this);
-                    dialog.setContentView(R.layout.timer_dialog);
-                    dialog.show();
-                    Button hide = dialog.findViewById(R.id.btn_timer);
-                    hide.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            dialog.dismiss();
-                        }
-                    });
-
+                public void onClick(View view) {
+                    showQuestion();
+                    dialog.dismiss();
                 }
-            }, 2000);
-
+            });
         }
     }
 
