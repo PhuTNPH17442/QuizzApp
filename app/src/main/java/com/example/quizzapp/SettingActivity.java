@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 
 public class SettingActivity extends AppCompatActivity {
@@ -35,6 +36,24 @@ public class SettingActivity extends AppCompatActivity {
         mMusicCheckbox = findViewById(R.id.music_checkbox);
         mMusicCheckbox.setChecked(true); //mặc định là true
         btn_ok = findViewById(R.id.btn_ok);
+
+        LinearLayout linearLayout_credits = findViewById(R.id.linearLayout_credits);
+        linearLayout_credits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingActivity.this, CreditsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        LinearLayout linearLayout_policy = findViewById(R.id.linearLayout_policy);
+        linearLayout_policy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingActivity.this, CreditsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,8 +86,8 @@ public class SettingActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.music_checkbox:
-                        switchMusicEnableCheckbox();
-                        break;
+                switchMusicEnableCheckbox();
+                break;
         }
 
     }
