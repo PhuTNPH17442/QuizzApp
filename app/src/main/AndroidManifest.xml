@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizzApp">
-        <activity android:name=".guessword.ResultActivity_doan_chu"></activity>
+        <activity android:name=".guessword.ResultActivity_doan_chu" />
         <activity
             android:name=".CreditsActivity"
             android:exported="true" />
