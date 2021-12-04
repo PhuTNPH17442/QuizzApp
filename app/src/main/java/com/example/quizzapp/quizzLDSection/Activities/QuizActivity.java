@@ -125,7 +125,7 @@ public class QuizActivity extends AppCompatActivity {
     private void startQuiz() {
 
         questionTotalCount = questionList.size();
-        Collections.shuffle(questionList);
+        Collections.shuffle(questionList); //xáo trộn phần tử
 
         showQuestions(); // gọi đến phương thức showQuestions
 

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.example.quizzapp.MenuGameActivity;
 import com.example.quizzapp.R;
 import com.example.quizzapp.quizzLDSection.constants.Constant;
 import com.example.quizzapp.quizzLDSection.model.Questions;
@@ -155,5 +156,15 @@ public class HistoryLevelsActivity extends AppCompatActivity implements View.OnC
         super.onDestroy();
         Log.i("BUGBUG","onDestroy() in HistoryLevelsActivity");
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(HistoryLevelsActivity.this, CategoryActivity.class);
+        startActivity(intent);
+        finish();
+
+        super.onBackPressed();
     }
 }

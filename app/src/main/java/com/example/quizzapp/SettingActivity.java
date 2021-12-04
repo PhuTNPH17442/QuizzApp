@@ -56,8 +56,9 @@ public class SettingActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
 
-        Intent intent = new Intent(SettingActivity.this, MainActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(SettingActivity.this, MainActivity.class);
+//        startActivity(intent);
+        goToMainScreen();
 
     }
 

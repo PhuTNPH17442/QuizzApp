@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -32,6 +34,8 @@ public class MainActivity2 extends AppCompatActivity {
     EditText edYourAnswer;
     Button btnCheck, btnShow, btnNext;
 
+    private final Handler handler = new Handler();
+
     //audio
     private PlayAudioForAnswer playAudioForAnswer;
     int FLAG = 0;
@@ -49,6 +53,7 @@ public class MainActivity2 extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main2);
+
         txtCorrectAnswer = findViewById(R.id.txtCorrectAnswer);
         txtQuestionContainer = findViewById(R.id.txtQuestionContainer);
         txtRightAnswer = findViewById(R.id.txtRightAnswer);
@@ -63,17 +68,19 @@ public class MainActivity2 extends AppCompatActivity {
         btnNext = findViewById(R.id.btnNext);
         btnShow = findViewById(R.id.btnShow);
 
+        questionTotalCount = question.length;
+
         //audio
         playAudioForAnswer = new PlayAudioForAnswer(this);
 
         //random
-        random = new Random();
-        que = question[random.nextInt(question.length)];
-        txtQuestionContainer.setText(mixWords(que));
-        if (questionCounter < questionTotalCount) {
-            questionTotalCount = question.length;
-            questionCounter++;
-        }
+//        random = new Random();
+//        que = question[random.nextInt(question.length)];
+//        txtQuestionContainer.setText(mixWords(que));
+        showQuestion();
+
+
+
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,13 +95,13 @@ public class MainActivity2 extends AppCompatActivity {
 
                     Button hide = dialog.findViewById(R.id.btn_correct_dialog);
                     correctAns++;
-                    txtCauDung.setText("Câu đúng :" + String.valueOf(correctAns));
+                    txtCauDung.setText("Câu đúng : " + String.valueOf(correctAns));
                     //set audio
                     FLAG = 1;
                     playAudioForAnswer.setAudioForAnswer(FLAG);
                     //set điểm
                     score += 20;
-                    txtDiem.setText("Điểm: " + String.valueOf(score));
+                    txtDiem.setText("Điểm: " + String.valueOf(score) + "/100");
                     dialog.show();
                     hide.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -103,8 +110,9 @@ public class MainActivity2 extends AppCompatActivity {
                         }
                     });
                     edYourAnswer.setText("");
-                    que = question[random.nextInt(question.length)];
-                    txtQuestionContainer.setText(mixWords(que));
+//                    que = question[random.nextInt(question.length)];
+//                    txtQuestionContainer.setText(mixWords(que));
+                    showQuestion();
                     //ẩn các view
                     txtCorrectAnswer.setVisibility(View.INVISIBLE);
                     txtRightAnswer.setVisibility(View.INVISIBLE);
@@ -113,10 +121,13 @@ public class MainActivity2 extends AppCompatActivity {
                     dialog.setContentView(R.layout.wrong_dialog);
                     Button hide = dialog.findViewById(R.id.btn_wrong_dialog);
 
+                    TextView txtCauDung = dialog.findViewById(R.id.tv_correct_answer);
+                    txtCauDung.setText("" + que);
+
                     FLAG = 2;
                     playAudioForAnswer.setAudioForAnswer(FLAG);
                     wrongAns++;
-                    txtCauSai.setText("Câu sai:" + String.valueOf(wrongAns));
+                    txtCauSai.setText("Câu sai : " + String.valueOf(wrongAns));
                     dialog.show();
                     hide.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -131,8 +142,9 @@ public class MainActivity2 extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                que = question[random.nextInt(question.length)];
-                txtQuestionContainer.setText(mixWords(que));
+//                que = question[random.nextInt(question.length)];
+//                txtQuestionContainer.setText(mixWords(que));
+                showQuestion();
 
                 edYourAnswer.setText("");
                 txtCorrectAnswer.setVisibility(View.INVISIBLE);
@@ -159,12 +171,40 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     private String mixWords(String word) {
-        List<String> words = Arrays.asList(word.split(""));
-        Collections.shuffle(words);
+        List<String> words = Arrays.asList(word.split("")); //chuyển đổi array sang list
+        //phương thức split tách chuỗi dựa trên ""
+        Collections.shuffle(words); //xáo trộn phần tử
         String mixed = "";
+        //Sử dụng vòng lặp for each để in ra các element của chuỗi thử được
         for (String i : words) {
             mixed += i;
+            mixed += " / ";
         }
+
         return mixed;
+    }
+
+    public void showQuestion() {
+        if (questionCounter < 5) {
+
+            random = new Random();
+            que = question[random.nextInt(question.length)];
+            txtQuestionContainer.setText(mixWords(que));
+
+            questionCounter++;
+
+            txtCauHoi.setText("Câu hỏi: " + questionCounter + "/" + 5);
+        } else {
+            //Khi chạy hết số câu hỏi sẽ hiện ra thông báo
+            Toast.makeText(this, "Hoàn thành Quiz", Toast.LENGTH_SHORT).show();
+
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(MainActivity2.this, ManHinhChinh.class);
+                    startActivity(intent);
+                }
+            }, 1000);
+        }
     }
 }
