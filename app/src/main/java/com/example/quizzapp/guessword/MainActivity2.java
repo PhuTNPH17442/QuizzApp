@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
@@ -16,11 +19,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.quizzapp.R;
+import com.example.quizzapp.quizzLDSection.Activities.QuizActivity;
 import com.example.quizzapp.quizzLDSection.Audio.PlayAudioForAnswer;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -46,6 +51,11 @@ public class MainActivity2 extends AppCompatActivity {
 
     private int questionCounter;
     private int questionTotalCount;
+
+    private static final long COUNT_IN_MILLIS = 30000;
+    private CountDownTimer countDownTimer;
+    private long timeLeftInMillis;
+    private ColorStateList defaultTextColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +89,7 @@ public class MainActivity2 extends AppCompatActivity {
 //        txtQuestionContainer.setText(mixWords(que));
         showQuestion();
 
+        startCountDown();
 
 
         btnCheck.setOnClickListener(new View.OnClickListener() {
@@ -144,8 +155,11 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
 //                que = question[random.nextInt(question.length)];
 //                txtQuestionContainer.setText(mixWords(que));
-                showQuestion();
-
+                if (edYourAnswer.getText().toString().equals("")) {
+                    Toast.makeText(getApplicationContext(), "Bạn chưa điền đáp án", Toast.LENGTH_SHORT).show();
+                }else {
+                    showQuestion();
+                }
                 edYourAnswer.setText("");
                 txtCorrectAnswer.setVisibility(View.INVISIBLE);
                 txtRightAnswer.setVisibility(View.INVISIBLE);
@@ -206,5 +220,70 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }, 1000);
         }
+        timeLeftInMillis = COUNT_IN_MILLIS;
+        startCountDown();
     }
+
+    private void startCountDown() {
+
+        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
+            }
+
+            @Override
+            public void onFinish() {
+
+                timeLeftInMillis = 0;
+                updateCountDownText();
+
+            }
+        }.start();
+
+    }
+
+    private void updateCountDownText() {
+
+        int minutes = (int) (timeLeftInMillis / 1000) / 60;
+        int seconds = (int) (timeLeftInMillis / 1000) % 60;
+
+        String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        txtTime.setText(timeFormatted);
+
+        if (timeLeftInMillis < 10000) {
+
+            txtTime.setTextColor(Color.RED);
+
+            FLAG = 3;
+            playAudioForAnswer.setAudioForAnswer(FLAG);
+
+        } else {
+            txtTime.setTextColor(Color.BLACK);
+        }
+
+        if (timeLeftInMillis == 0) {
+
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    Dialog dialog = new Dialog(MainActivity2.this);
+                    dialog.setContentView(R.layout.timer_dialog);
+                    dialog.show();
+                    Button hide = dialog.findViewById(R.id.btn_timer);
+                    hide.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                }
+            }, 2000);
+
+        }
+    }
+
 }

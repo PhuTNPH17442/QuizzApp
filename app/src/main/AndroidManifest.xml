@@ -12,6 +12,9 @@
         android:theme="@style/Theme.QuizzApp">
         <activity android:name=".guessword.ResultActivity_doan_chu"></activity>
         <activity
+            android:name=".CreditsActivity"
+            android:exported="true" />
+        <activity
             android:name=".guessword.ManHinhChinh"
             android:exported="false" />
         <activity android:name=".doan_hinh.MainActivity_doan_hinh" />
