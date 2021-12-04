@@ -55,7 +55,6 @@ public class MainActivity2 extends AppCompatActivity {
     private static final long COUNT_IN_MILLIS = 30000;
     private CountDownTimer countDownTimer;
     private long timeLeftInMillis;
-    private ColorStateList defaultTextColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,8 +87,6 @@ public class MainActivity2 extends AppCompatActivity {
 //        que = question[random.nextInt(question.length)];
 //        txtQuestionContainer.setText(mixWords(que));
         showQuestion();
-
-        startCountDown();
 
 
         btnCheck.setOnClickListener(new View.OnClickListener() {
@@ -157,7 +154,7 @@ public class MainActivity2 extends AppCompatActivity {
 //                txtQuestionContainer.setText(mixWords(que));
                 if (edYourAnswer.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "Bạn chưa điền đáp án", Toast.LENGTH_SHORT).show();
-                } else {
+                }else {
                     showQuestion();
                 }
                 edYourAnswer.setText("");
@@ -208,6 +205,9 @@ public class MainActivity2 extends AppCompatActivity {
             questionCounter++;
 
             txtCauHoi.setText("Câu hỏi: " + questionCounter + "/" + 5);
+
+            timeLeftInMillis = COUNT_IN_MILLIS;
+            startCountDown();
         } else {
             //Khi chạy hết số câu hỏi sẽ hiện ra thông báo
             Toast.makeText(this, "Hoàn thành Quiz", Toast.LENGTH_SHORT).show();
@@ -220,8 +220,8 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }, 1000);
         }
-        timeLeftInMillis = COUNT_IN_MILLIS;
-        startCountDown();
+//        timeLeftInMillis = COUNT_IN_MILLIS;
+//        startCountDown();
     }
 
     private void startCountDown() {
@@ -262,18 +262,28 @@ public class MainActivity2 extends AppCompatActivity {
         } else {
             txtTime.setTextColor(Color.BLACK);
         }
+
         if (timeLeftInMillis == 0) {
-            Dialog dialog = new Dialog(MainActivity2.this);
-            dialog.setContentView(R.layout.timer_dialog);
-            dialog.show();
-            Button hide = dialog.findViewById(R.id.btn_timer);
-            hide.setOnClickListener(new View.OnClickListener() {
+
+            handler.postDelayed(new Runnable() {
                 @Override
-                public void onClick(View view) {
-                    showQuestion();
-                    dialog.dismiss();
+                public void run() {
+
+                    Dialog dialog = new Dialog(MainActivity2.this);
+                    dialog.setContentView(R.layout.timer_dialog);
+                    dialog.show();
+                    Button hide = dialog.findViewById(R.id.btn_timer);
+                    hide.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                            showQuestion();
+                        }
+                    });
+
                 }
-            });
+            }, 2000);
+
         }
     }
 
