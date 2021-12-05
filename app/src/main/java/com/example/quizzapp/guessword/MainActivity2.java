@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -115,12 +116,14 @@ public class MainActivity2 extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             dialog.dismiss();
+                            countDownTimer.cancel();
+                            showQuestion();
                         }
                     });
                     edYourAnswer.setText("");
 //                    que = question[random.nextInt(question.length)];
 //                    txtQuestionContainer.setText(mixWords(que));
-                    showQuestion();
+
                     //ẩn các view
                     txtCorrectAnswer.setVisibility(View.INVISIBLE);
                     txtRightAnswer.setVisibility(View.INVISIBLE);
@@ -141,6 +144,8 @@ public class MainActivity2 extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             dialog.dismiss();
+                            countDownTimer.cancel();
+                            showQuestion();
                         }
                     });
                     edYourAnswer.setText("");
@@ -154,7 +159,8 @@ public class MainActivity2 extends AppCompatActivity {
 //                txtQuestionContainer.setText(mixWords(que));
                 if (edYourAnswer.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "Bạn chưa điền đáp án", Toast.LENGTH_SHORT).show();
-                } else {
+                }else {
+                    countDownTimer.cancel();
                     showQuestion();
                 }
                 edYourAnswer.setText("");
@@ -215,7 +221,7 @@ public class MainActivity2 extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(MainActivity2.this, ManHinhChinh.class);
+                    Intent intent = new Intent(MainActivity2.this, ManHinhTinhDiem.class);
                     startActivity(intent);
                 }
             }, 1000);
@@ -280,6 +286,7 @@ public class MainActivity2 extends AppCompatActivity {
                             showQuestion();
                         }
                     });
+
                     dialog.show();
                     dialog.setCancelable(false);
                     dialog.setCanceledOnTouchOutside(false);
@@ -287,6 +294,24 @@ public class MainActivity2 extends AppCompatActivity {
             }, 2000);
 
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("BUGBUG","onStop() in MainActivity");
+        finish();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+        Log.i("BUGBUG","onDestroy() in MainActivity2");
     }
 
 }
