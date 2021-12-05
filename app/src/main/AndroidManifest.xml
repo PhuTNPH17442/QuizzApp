@@ -13,7 +13,6 @@
         <activity
             android:name=".guessword.ManHinhTinhDiem"
             android:exported="false" />
-        <activity android:name=".guessword.ResultActivity_doan_chu" />
         <activity
             android:name=".CreditsActivity"
             android:exported="true"></activity>

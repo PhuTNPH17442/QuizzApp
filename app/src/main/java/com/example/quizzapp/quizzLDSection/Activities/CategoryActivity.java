@@ -48,14 +48,14 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
                 createLevelsForAll();
                 Intent intentAll = new Intent(CategoryActivity.this, AllLevelsActivity.class);
-                intentAll.putExtra("Category", CategoryConstants.ALL);
+                intentAll.putExtra("Category", CategoryConstants.ALL); //truyền dữ liệu Category - all đến QuizActivity
                 startActivity(intentAll);
                 break;
             case R.id.btn_History:
 
                 createLevelsForHistory();
                 Intent intentHistory = new Intent(CategoryActivity.this, HistoryLevelsActivity.class);
-                intentHistory.putExtra("Category", CategoryConstants.HISTORY);
+                intentHistory.putExtra("Category", CategoryConstants.HISTORY); //truyền dữ liệu Category - history đến QuizActivity
                 startActivity(intentHistory);
                 break;
             case R.id.btn_Math:
