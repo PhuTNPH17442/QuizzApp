@@ -77,11 +77,11 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        setupUI();
+        setupUI(); //ánh xạ dữ liệu
 
         Intent intentCategoryWithLevel = getIntent();
-        categoryValue = intentCategoryWithLevel.getStringExtra("Category");
-        levelsID = intentCategoryWithLevel.getIntExtra("Level", 0);
+        categoryValue = intentCategoryWithLevel.getStringExtra("Category"); //nhận dữ liệu thể loại từ CategoryActivity
+        levelsID = intentCategoryWithLevel.getIntExtra("Level", 0); //nhận dữ liệu độ khó từ LevelsActivity
 
         fetchDB();
         Log.i("BUGBUG","onCreate() in QuizActivity");
@@ -117,7 +117,7 @@ public class QuizActivity extends AppCompatActivity {
     private void fetchDB() {
 
         QuizDbHelper dbHelper = new QuizDbHelper(this);
-        questionList = dbHelper.getAllQuestionsWithCategoryAndLevels(levelsID, categoryValue); //gọi method với category&levels
+        questionList = dbHelper.getAllQuestionsWithCategoryAndLevels(levelsID, categoryValue); //gọi method truy xuất sql với category&levels
 
         startQuiz();
     }
@@ -194,7 +194,7 @@ public class QuizActivity extends AppCompatActivity {
 
         answerd = true;
 
-        countDownTimer.cancel();
+        countDownTimer.cancel(); // hủy đếm ngược
 
         RadioButton rbSelected = findViewById(rbGroup.getCheckedRadioButtonId());
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
