@@ -159,7 +159,7 @@ public class MainActivity2 extends AppCompatActivity {
 //                txtQuestionContainer.setText(mixWords(que));
                 if (edYourAnswer.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "Bạn chưa điền đáp án", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     countDownTimer.cancel();
                     showQuestion();
                 }
@@ -222,6 +222,9 @@ public class MainActivity2 extends AppCompatActivity {
                 @Override
                 public void run() {
                     Intent intent = new Intent(MainActivity2.this, ManHinhTinhDiem.class);
+                    intent.putExtra("totalScore", score);
+                    intent.putExtra("correctAns", correctAns);
+                    intent.putExtra("wrongAns", wrongAns);
                     startActivity(intent);
                 }
             }, 1000);
@@ -299,7 +302,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        Log.i("BUGBUG","onStop() in MainActivity");
+        Log.i("BUGBUG", "onStop() in MainActivity");
         finish();
 
     }
@@ -311,7 +314,7 @@ public class MainActivity2 extends AppCompatActivity {
         if (countDownTimer != null) {
             countDownTimer.cancel();
         }
-        Log.i("BUGBUG","onDestroy() in MainActivity2");
+        Log.i("BUGBUG", "onDestroy() in MainActivity2");
     }
 
 }
