@@ -222,6 +222,11 @@ public class MainActivity2 extends AppCompatActivity {
                 @Override
                 public void run() {
                     Intent intent = new Intent(MainActivity2.this, ManHinhTinhDiem.class);
+
+                    intent.putExtra("totalScore", score);
+                    intent.putExtra("correctAns", correctAns);
+                    intent.putExtra("wrongAns", wrongAns);
+
                     startActivity(intent);
                 }
             }, 1000);

@@ -10,12 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizzApp">
+        <activity android:name=".quizzLDSection.Activities.GeographyLevelsActivity"></activity>
         <activity
             android:name=".guessword.ManHinhTinhDiem"
             android:exported="false" />
         <activity
             android:name=".CreditsActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".guessword.ManHinhChinh"
             android:exported="false" />
