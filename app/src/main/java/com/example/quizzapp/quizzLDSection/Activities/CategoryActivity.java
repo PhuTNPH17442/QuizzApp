@@ -72,6 +72,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.btn_Geography:
 
+                createLevelsForGeography();
                 Intent intentGeography = new Intent(CategoryActivity.this, GeographyLevelsActivity.class);
                 intentGeography.putExtra("Category", CategoryConstants.GEOGRAPHY); //truyền dữ liệu Category - geography đến QuizActivity
                 startActivity(intentGeography);

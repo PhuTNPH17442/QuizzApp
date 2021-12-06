@@ -12,7 +12,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.quizzapp.MenuGameActivity;
 import com.example.quizzapp.R;
 import com.example.quizzapp.quizzLDSection.constants.Constant;
 import com.example.quizzapp.quizzLDSection.model.Questions;
@@ -63,26 +62,26 @@ public class HistoryLevelsActivity extends AppCompatActivity implements View.OnC
 
                 case R.id.btnLevel1:
 
-                    Intent intentAllLevel1 = new Intent(HistoryLevelsActivity.this, QuizActivity.class);
-                    intentAllLevel1.putExtra("Category", Questions.CATEGORY_HISTORY);
-                    intentAllLevel1.putExtra("Level", Questions.LEVEL1);
-                    startActivity(intentAllLevel1);
+                    Intent intentHisLevel1 = new Intent(HistoryLevelsActivity.this, QuizActivity.class);
+                    intentHisLevel1.putExtra("Category", Questions.CATEGORY_HISTORY);
+                    intentHisLevel1.putExtra("Level", Questions.LEVEL1);
+                    startActivity(intentHisLevel1);
                     break;
 
                 case R.id.btnLevel2:
 
-                    Intent intentAllLevel2 = new Intent(HistoryLevelsActivity.this, QuizActivity.class);
-                    intentAllLevel2.putExtra("Category", Questions.CATEGORY_HISTORY);
-                    intentAllLevel2.putExtra("Level", Questions.LEVEL2);
-                    startActivity(intentAllLevel2);
+                    Intent intentHisLevel2 = new Intent(HistoryLevelsActivity.this, QuizActivity.class);
+                    intentHisLevel2.putExtra("Category", Questions.CATEGORY_HISTORY);
+                    intentHisLevel2.putExtra("Level", Questions.LEVEL2);
+                    startActivity(intentHisLevel2);
                     break;
 
                 case R.id.btnLevel3:
 
-                    Intent intentAllLevel3 = new Intent(HistoryLevelsActivity.this, QuizActivity.class);
-                    intentAllLevel3.putExtra("Category", Questions.CATEGORY_HISTORY);
-                    intentAllLevel3.putExtra("Level", Questions.LEVEL3);
-                    startActivity(intentAllLevel3);
+                    Intent intentHisLevel3 = new Intent(HistoryLevelsActivity.this, QuizActivity.class);
+                    intentHisLevel3.putExtra("Category", Questions.CATEGORY_HISTORY);
+                    intentHisLevel3.putExtra("Level", Questions.LEVEL3);
+                    startActivity(intentHisLevel3);
                     break;
             }
         }
