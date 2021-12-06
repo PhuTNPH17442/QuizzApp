@@ -30,9 +30,12 @@ import java.util.Locale;
 import java.util.Random;
 
 public class MainActivity2 extends AppCompatActivity {
-    String[] question = new String[]{"Animals", "Singapore", "United", "Vegetable", "Pigs", "One", "Two", "Three", "Four",
-            "Six", "Seven", "Eight", "Night", "Ten", "Eleven", "Football"
+    //data
+    String[] question = new String[]{"Animals", "Beautiful", "Exited", "Vegetable", "Pigs",
+            "Cute", "Handsome", "Pretty", "Blood", "Clever", "Funny", "Camera", "Design",
+            "Film", "Movie", "Music", "Computer", "Blog", "Data", "Email", "Laptop", "Headline"
     };
+
     String que;
     Random random;
     TextView txtCorrectAnswer, txtRightAnswer, txtQuestionContainer,
@@ -78,6 +81,7 @@ public class MainActivity2 extends AppCompatActivity {
         btnNext = findViewById(R.id.btnNext);
         btnShow = findViewById(R.id.btnShow);
 
+//lấy về độ dài của chuỗi
         questionTotalCount = question.length;
 
         //audio
@@ -128,6 +132,8 @@ public class MainActivity2 extends AppCompatActivity {
                     txtCorrectAnswer.setVisibility(View.INVISIBLE);
                     txtRightAnswer.setVisibility(View.INVISIBLE);
                 } else {
+
+                    //dialog hiển thị báo đáp án sai
                     Dialog dialog = new Dialog(MainActivity2.this);
                     dialog.setContentView(R.layout.wrong_dialog);
                     Button hide = dialog.findViewById(R.id.btn_wrong_dialog);
@@ -135,6 +141,7 @@ public class MainActivity2 extends AppCompatActivity {
                     TextView txtCauDung = dialog.findViewById(R.id.tv_correct_answer);
                     txtCauDung.setText("" + que);
 
+                    //audio báo sai
                     FLAG = 2;
                     playAudioForAnswer.setAudioForAnswer(FLAG);
                     wrongAns++;
@@ -221,6 +228,8 @@ public class MainActivity2 extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
+
+                    //gửi dữ liệu
                     Intent intent = new Intent(MainActivity2.this, ManHinhTinhDiem.class);
                     intent.putExtra("totalScore", score);
                     intent.putExtra("correctAns", correctAns);
@@ -233,6 +242,7 @@ public class MainActivity2 extends AppCompatActivity {
 //        startCountDown();
     }
 
+    //hàm đếm ngược
     private void startCountDown() {
 
         countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {

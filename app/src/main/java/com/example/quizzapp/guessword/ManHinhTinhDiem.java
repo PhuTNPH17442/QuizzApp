@@ -33,6 +33,8 @@ public class ManHinhTinhDiem extends AppCompatActivity {
         tvWrongQues = findViewById(R.id.tvCauSai);
 
         Intent intent = getIntent();
+
+        //lấy dữ liệu từ mainactivity2
         highScore = intent.getIntExtra("totalScore", 0);
         correctAns = intent.getIntExtra("correctAns", 0);
         wrongAns = intent.getIntExtra("wrongAns", 0);
