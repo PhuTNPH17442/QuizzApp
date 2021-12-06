@@ -184,7 +184,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 Questions.CATEGORY_SCIENCE, Questions.LEVEL1);
         addQuestions(qs1);
 
-        Questions qs2 = new Questions("Bên trong hộp sọ con người có gì?","Ruột","Tim","Phổi","Não", 2,
+        Questions qs2 = new Questions("Bên trong hộp sọ con người có gì?","Ruột","Tim","Phổi","Não", 4,
                 Questions.CATEGORY_SCIENCE, Questions.LEVEL1);
         addQuestions(qs2);
 

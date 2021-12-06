@@ -72,6 +72,7 @@ public class QuizActivity extends AppCompatActivity {
     int UNLOCK_AL2 = 0, UNLOCK_AL3 = 0; //All Level
     int UNLOCK_HL2 = 0, UNLOCK_HL3 = 0; //History Level
     int UNLOCK_GL2 = 0, UNLOCK_GL3 = 0; //Geography Level
+    int UNLOCK_SL2 = 0, UNLOCK_SL3 = 0; //Science Level
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -577,6 +578,8 @@ public class QuizActivity extends AppCompatActivity {
 
         unlockGeographyLevels();
 
+        unlockScienceLevels();
+
     }
 
 
@@ -702,6 +705,49 @@ public class QuizActivity extends AppCompatActivity {
 
                     SharedPreferences.Editor editor1 = sharedPreferences.edit();
                     editor1.putString(Constant.KEY_CAT_GEO_LEVEL_3, "Unlock");
+                    editor1.apply();
+                }
+            }
+
+        }
+    }
+
+    private void unlockScienceLevels() {
+
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(getPackageName() + Constant.MY_LEVEL_PREFFILE,
+                        Context.MODE_PRIVATE);
+
+        if (levelsID == 1 && categoryValue.equals("Science")) {
+
+            UNLOCK_SL2 = correctAns;
+            //Tra loi dung >= 3 cau hoi de unlock level
+            if (UNLOCK_SL2 >= 3) {
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt(Constant.KEY_SCI_LEVEL_2, 1);
+                editor.apply();
+
+                SharedPreferences.Editor editor1 = sharedPreferences.edit();
+                editor1.putString(Constant.KEY_CAT_SCI_LEVEL_2, "Unlock");
+                editor1.apply();
+
+            }
+
+        } else if (levelsID == 2 && categoryValue.equals("Science")) {
+
+            UNLOCK_AL3 = correctAns;
+
+            if (sharedPreferences.getInt(Constant.KEY_SCI_LEVEL_2, 0) == 1) {
+                //Tra loi dung >= 3 cau hoi de unlock level
+                if (UNLOCK_AL3 >= 3) {
+
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt(Constant.KEY_SCI_LEVEL_3, 1);
+                    editor.apply();
+
+                    SharedPreferences.Editor editor1 = sharedPreferences.edit();
+                    editor1.putString(Constant.KEY_CAT_SCI_LEVEL_3, "Unlock");
                     editor1.apply();
                 }
             }

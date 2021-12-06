@@ -48,14 +48,14 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
                 createLevelsForAll();
                 Intent intentAll = new Intent(CategoryActivity.this, AllLevelsActivity.class);
-                intentAll.putExtra("Category", CategoryConstants.ALL); //truyền dữ liệu Category - all đến QuizActivity
+                intentAll.putExtra("Category", CategoryConstants.ALL); //truyền dữ liệu Category - all đến AllLevelsActivity
                 startActivity(intentAll);
                 break;
             case R.id.btn_History:
 
                 createLevelsForHistory();
                 Intent intentHistory = new Intent(CategoryActivity.this, HistoryLevelsActivity.class);
-                intentHistory.putExtra("Category", CategoryConstants.HISTORY); //truyền dữ liệu Category - history đến QuizActivity
+                intentHistory.putExtra("Category", CategoryConstants.HISTORY); //truyền dữ liệu Category - history đến HistoryLevelsActivity
                 startActivity(intentHistory);
                 break;
             case R.id.btn_Math:
@@ -74,13 +74,14 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
                 createLevelsForGeography();
                 Intent intentGeography = new Intent(CategoryActivity.this, GeographyLevelsActivity.class);
-                intentGeography.putExtra("Category", CategoryConstants.GEOGRAPHY); //truyền dữ liệu Category - geography đến QuizActivity
+                intentGeography.putExtra("Category", CategoryConstants.GEOGRAPHY); //truyền dữ liệu Category - geography đến GeographyLevelsActivity
                 startActivity(intentGeography);
                 break;
             case R.id.btn_Science:
 
-                Intent intentScience = new Intent(CategoryActivity.this, AllLevelsActivity.class);
-                intentScience.putExtra("Category", CategoryConstants.SCIENCE);
+                createLevelsForScience();
+                Intent intentScience = new Intent(CategoryActivity.this, ScienceLevelsActivity.class);
+                intentScience.putExtra("Category", CategoryConstants.SCIENCE); //truyền dữ liệu Category - science đến GeographyLevelsActivity
                 startActivity(intentScience);
                 break;
         }
@@ -181,6 +182,38 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             editor.putInt(Constant.KEY_GEO_LEVEL_1, 1);
             editor.putInt(Constant.KEY_GEO_LEVEL_2, 1);
             editor.putInt(Constant.KEY_GEO_LEVEL_3, 1);
+
+        }
+    }
+
+    // 1 = unlocked  &  0 = locked
+    private void createLevelsForScience() {
+        //Su dung SharedPreferences de luu tru thong tin
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(getPackageName() + Constant.MY_LEVEL_PREFFILE, Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(Constant.KEY_SCI_LEVEL_1, 1); // mặc định Level 1 đã đc unlocked
+        editor.putString(Constant.KEY_CAT_SCI_LEVEL_1, "Unlock");
+        editor.apply();
+
+        if (sharedPreferences.getString(Constant.KEY_CAT_SCI_LEVEL_1, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_SCI_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_SCI_LEVEL_2, 0);
+            editor.putInt(Constant.KEY_SCI_LEVEL_3, 0);
+
+        }else if (sharedPreferences.getString(Constant.KEY_CAT_SCI_LEVEL_2, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_SCI_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_SCI_LEVEL_2, 1);
+            editor.putInt(Constant.KEY_SCI_LEVEL_3, 0);
+
+        }else if (sharedPreferences.getString(Constant.KEY_CAT_SCI_LEVEL_3, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_SCI_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_SCI_LEVEL_2, 1);
+            editor.putInt(Constant.KEY_SCI_LEVEL_3, 1);
 
         }
     }

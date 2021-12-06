@@ -145,6 +145,10 @@ public class ResultActivity extends AppCompatActivity {
 
             Intent intentGepgraphy = new Intent(ResultActivity.this, GeographyLevelsActivity.class);
             startActivity(intentGepgraphy);
+        } else if (categoryAgainValue.equals("Science")) {
+
+            Intent intentScience = new Intent(ResultActivity.this, ScienceLevelsActivity.class);
+            startActivity(intentScience);
         }
 
     }

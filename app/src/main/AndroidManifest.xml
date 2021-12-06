@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizzApp">
-        <activity android:name=".quizzLDSection.Activities.GeographyLevelsActivity"></activity>
+        <activity android:name=".quizzLDSection.Activities.ScienceLevelsActivity"></activity>
+        <activity android:name=".quizzLDSection.Activities.GeographyLevelsActivity" />
         <activity
             android:name=".guessword.ManHinhTinhDiem"
             android:exported="false" />
