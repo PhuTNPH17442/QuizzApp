@@ -22,7 +22,7 @@
             android:layout_marginBottom="7dp"
             android:gravity="start"
             android:padding="10dp"
-            android:text="Điểm của bạn : "
+            android:text="Điểm của bạn "
             android:textAlignment="textStart"
             android:textColor="#000"
             android:textSize="40sp"
