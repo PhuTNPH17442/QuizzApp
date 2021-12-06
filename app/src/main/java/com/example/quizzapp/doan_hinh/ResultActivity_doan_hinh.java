@@ -41,14 +41,14 @@ public class ResultActivity_doan_hinh extends AppCompatActivity {
                 ResultActivity_doan_hinh.super.onBackPressed();
             }
         });
-//        Button btnhome = findViewById(R.id.btnhome);
-//        btnhome.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent1 = new Intent(ResultActivity_doan_hinh.this, MenuGameActivity.class);
-//                startActivity(intent1);
-//            }
-//        });
+        Button btnhome = findViewById(R.id.btnhome);
+        btnhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(ResultActivity_doan_hinh.this, MenuGameActivity.class);
+                startActivity(intent1);
+            }
+        });
     }
 
 }
