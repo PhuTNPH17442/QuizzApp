@@ -91,6 +91,7 @@ public class ResultActivity extends AppCompatActivity {
         highScore = newHighScore;
         tvHighScore.setText("Điểm cao nhất: " + String.valueOf(highScore));
 
+        //lưu điểm số cao nhất vào shared preferences
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(SHARED_PREFERENCE_HIGH_SCORE, highScore);
@@ -140,6 +141,14 @@ public class ResultActivity extends AppCompatActivity {
             Intent intentHistory = new Intent(ResultActivity.this, HistoryLevelsActivity.class);
             startActivity(intentHistory);
 
+        } else if (categoryAgainValue.equals("Geography")) {
+
+            Intent intentGepgraphy = new Intent(ResultActivity.this, GeographyLevelsActivity.class);
+            startActivity(intentGepgraphy);
+        } else if (categoryAgainValue.equals("Science")) {
+
+            Intent intentScience = new Intent(ResultActivity.this, ScienceLevelsActivity.class);
+            startActivity(intentScience);
         }
 
     }

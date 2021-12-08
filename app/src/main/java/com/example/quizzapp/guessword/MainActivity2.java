@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -29,9 +30,12 @@ import java.util.Locale;
 import java.util.Random;
 
 public class MainActivity2 extends AppCompatActivity {
-    String[] question = new String[]{"Animals", "Singapore", "United", "Vegetable", "Pigs", "One", "Two", "Three", "Four",
-            "Six", "Seven", "Eight", "Night", "Ten", "Eleven", "Football"
+    //data
+    String[] question = new String[]{"Animals", "Beautiful", "Exited", "Vegetable", "Pigs",
+            "Cute", "Handsome", "Pretty", "Blood", "Clever", "Funny", "Camera", "Design",
+            "Film", "Movie", "Music", "Computer", "Blog", "Data", "Email", "Laptop", "Headline"
     };
+
     String que;
     Random random;
     TextView txtCorrectAnswer, txtRightAnswer, txtQuestionContainer,
@@ -55,7 +59,6 @@ public class MainActivity2 extends AppCompatActivity {
     private static final long COUNT_IN_MILLIS = 30000;
     private CountDownTimer countDownTimer;
     private long timeLeftInMillis;
-    private ColorStateList defaultTextColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +81,7 @@ public class MainActivity2 extends AppCompatActivity {
         btnNext = findViewById(R.id.btnNext);
         btnShow = findViewById(R.id.btnShow);
 
+//lấy về độ dài của chuỗi
         questionTotalCount = question.length;
 
         //audio
@@ -88,8 +92,6 @@ public class MainActivity2 extends AppCompatActivity {
 //        que = question[random.nextInt(question.length)];
 //        txtQuestionContainer.setText(mixWords(que));
         showQuestion();
-
-        startCountDown();
 
 
         btnCheck.setOnClickListener(new View.OnClickListener() {
@@ -118,16 +120,20 @@ public class MainActivity2 extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             dialog.dismiss();
+                            countDownTimer.cancel();
+                            showQuestion();
                         }
                     });
                     edYourAnswer.setText("");
 //                    que = question[random.nextInt(question.length)];
 //                    txtQuestionContainer.setText(mixWords(que));
-                    showQuestion();
+
                     //ẩn các view
                     txtCorrectAnswer.setVisibility(View.INVISIBLE);
                     txtRightAnswer.setVisibility(View.INVISIBLE);
                 } else {
+
+                    //dialog hiển thị báo đáp án sai
                     Dialog dialog = new Dialog(MainActivity2.this);
                     dialog.setContentView(R.layout.wrong_dialog);
                     Button hide = dialog.findViewById(R.id.btn_wrong_dialog);
@@ -135,6 +141,7 @@ public class MainActivity2 extends AppCompatActivity {
                     TextView txtCauDung = dialog.findViewById(R.id.tv_correct_answer);
                     txtCauDung.setText("" + que);
 
+                    //audio báo sai
                     FLAG = 2;
                     playAudioForAnswer.setAudioForAnswer(FLAG);
                     wrongAns++;
@@ -144,6 +151,8 @@ public class MainActivity2 extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             dialog.dismiss();
+                            countDownTimer.cancel();
+                            showQuestion();
                         }
                     });
                     edYourAnswer.setText("");
@@ -158,6 +167,7 @@ public class MainActivity2 extends AppCompatActivity {
                 if (edYourAnswer.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "Bạn chưa điền đáp án", Toast.LENGTH_SHORT).show();
                 } else {
+                    countDownTimer.cancel();
                     showQuestion();
                 }
                 edYourAnswer.setText("");
@@ -208,6 +218,9 @@ public class MainActivity2 extends AppCompatActivity {
             questionCounter++;
 
             txtCauHoi.setText("Câu hỏi: " + questionCounter + "/" + 5);
+
+            timeLeftInMillis = COUNT_IN_MILLIS;
+            startCountDown();
         } else {
             //Khi chạy hết số câu hỏi sẽ hiện ra thông báo
             Toast.makeText(this, "Hoàn thành Quiz", Toast.LENGTH_SHORT).show();
@@ -215,15 +228,21 @@ public class MainActivity2 extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(MainActivity2.this, ManHinhChinh.class);
+
+                    //gửi dữ liệu
+                    Intent intent = new Intent(MainActivity2.this, ManHinhTinhDiem.class);
+                    intent.putExtra("totalScore", score);
+                    intent.putExtra("correctAns", correctAns);
+                    intent.putExtra("wrongAns", wrongAns);
                     startActivity(intent);
                 }
             }, 1000);
         }
-        timeLeftInMillis = COUNT_IN_MILLIS;
-        startCountDown();
+//        timeLeftInMillis = COUNT_IN_MILLIS;
+//        startCountDown();
     }
 
+    //hàm đếm ngược
     private void startCountDown() {
 
         countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
@@ -262,19 +281,50 @@ public class MainActivity2 extends AppCompatActivity {
         } else {
             txtTime.setTextColor(Color.BLACK);
         }
+
         if (timeLeftInMillis == 0) {
-            Dialog dialog = new Dialog(MainActivity2.this);
-            dialog.setContentView(R.layout.timer_dialog);
-            dialog.show();
-            Button hide = dialog.findViewById(R.id.btn_timer);
-            hide.setOnClickListener(new View.OnClickListener() {
+
+            handler.postDelayed(new Runnable() {
                 @Override
-                public void onClick(View view) {
-                    showQuestion();
-                    dialog.dismiss();
+                public void run() {
+
+                    Dialog dialog = new Dialog(MainActivity2.this);
+                    dialog.setContentView(R.layout.timer_dialog);
+
+                    Button hide = dialog.findViewById(R.id.btn_timer);
+                    hide.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                            showQuestion();
+                        }
+                    });
+
+                    dialog.show();
+                    dialog.setCancelable(false);
+                    dialog.setCanceledOnTouchOutside(false);
                 }
-            });
+            }, 2000);
+
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("BUGBUG", "onStop() in MainActivity");
+        finish();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+        Log.i("BUGBUG", "onDestroy() in MainActivity2");
     }
 
 }

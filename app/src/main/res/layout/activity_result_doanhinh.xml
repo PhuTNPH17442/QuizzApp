@@ -43,12 +43,20 @@
             android:textColor="#fff"/>
 
         <Button
+            android:background="@drawable/custom_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Restar Quiz"
             android:layout_margin="20dp"
             android:layout_marginTop="200dp"
             android:id="@+id/btnrestar"/>
+        <Button
+            android:background="@drawable/custom_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:layout_margin="20dp"
+            android:id="@+id/btnhome"/>
 
     </LinearLayout>
 

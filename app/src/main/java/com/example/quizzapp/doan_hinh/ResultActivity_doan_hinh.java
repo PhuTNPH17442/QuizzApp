@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.quizzapp.MenuGameActivity;
 import com.example.quizzapp.R;
 
 public class ResultActivity_doan_hinh extends AppCompatActivity {
@@ -38,6 +39,14 @@ public class ResultActivity_doan_hinh extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ResultActivity_doan_hinh.super.onBackPressed();
+            }
+        });
+        Button btnhome = findViewById(R.id.btnhome);
+        btnhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(ResultActivity_doan_hinh.this, MenuGameActivity.class);
+                startActivity(intent1);
             }
         });
     }

@@ -79,6 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginTop="30dp"
                 android:id="@+id/answers">
 
             </LinearLayout>
@@ -93,10 +94,10 @@
         android:textSize="25sp"
         android:textAllCaps="false"
         android:textColor="#fff"
-        android:background="@color/teal_200"
+        android:background="@drawable/custom_button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SubMit" />
+        android:text="Sumbit" />
 
 
 </LinearLayout>
