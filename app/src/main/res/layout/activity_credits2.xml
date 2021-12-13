@@ -57,7 +57,7 @@
                 android:textSize="30sp"
                 android:gravity="center"/>
         </LinearLayout>
-        
+
     </ScrollView>
 
 </RelativeLayout>

@@ -139,7 +139,7 @@ public class    MainActivity_doan_hinh extends AppCompatActivity {
             rb1[i].setPadding(8,16,8,16);
             rb1[i].setTextSize(25);
             rb1[i].setId(i);
-            rb1[i].setWidth(500);
+            rb1[i].setWidth(550);
 
             rg.addView(rb1[i]);
         }

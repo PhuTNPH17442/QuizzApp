@@ -41,7 +41,7 @@ public class SettingActivity extends AppCompatActivity {
         linearLayout_credits.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SettingActivity.this, CreditsActivity.class);
+                Intent intent = new Intent(SettingActivity.this, CreditsActivity2.class);
                 startActivity(intent);
             }
         });
