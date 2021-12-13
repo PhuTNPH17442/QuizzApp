@@ -19,6 +19,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.quizzapp.MenuGameActivity;
 import com.example.quizzapp.R;
 import com.example.quizzapp.quizzLDSection.Activities.QuizActivity;
 import com.example.quizzapp.quizzLDSection.Audio.PlayAudioForAnswer;
@@ -325,6 +326,16 @@ public class MainActivity2 extends AppCompatActivity {
             countDownTimer.cancel();
         }
         Log.i("BUGBUG", "onDestroy() in MainActivity2");
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(MainActivity2.this, ManHinhChinh.class);
+        startActivity(intent);
+        finish();
+
+        super.onBackPressed();
     }
 
 }

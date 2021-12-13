@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.quizzapp.MainActivity;
 import com.example.quizzapp.R;
+import com.example.quizzapp.doan_hinh.ResultActivity_doan_hinh;
 
 public class ManHinhTinhDiem extends AppCompatActivity {
     TextView tvHighScore, tvTotalQuizQuestion, tvCorrectQues, tvWrongQues;
@@ -18,6 +21,8 @@ public class ManHinhTinhDiem extends AppCompatActivity {
     private int highScore, correctAns, wrongAns;
     public static final String SHARED_PREFERENCE = "shared_preference";
     public static final String SHARED_PREFERENCE_HIGH_SCORE = "shared_preference_high_score";
+
+    private long backPressedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,4 +70,27 @@ public class ManHinhTinhDiem extends AppCompatActivity {
         Intent intent = new Intent(ManHinhTinhDiem.this, ManHinhChinh.class);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+
+            Intent intent = new Intent(ManHinhTinhDiem.this, MainActivity.class);
+            startActivity(intent);
+
+        } else {
+
+            Toast.makeText(this, "Nhấn lại nút Back để thoát", Toast.LENGTH_SHORT).show();
+        }
+        backPressedTime = System.currentTimeMillis();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("BUGBUG","onStop() in ManHinhTinhDiem");
+        finish();
+
+    }
+
 }

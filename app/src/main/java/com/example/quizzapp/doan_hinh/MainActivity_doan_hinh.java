@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,6 +19,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizzapp.R;
+import com.example.quizzapp.quizzLDSection.Activities.AllLevelsActivity;
+import com.example.quizzapp.quizzLDSection.Activities.CategoryActivity;
 import com.example.quizzapp.quizzLDSection.Audio.PlayAudioForAnswer;
 
 public class    MainActivity_doan_hinh extends AppCompatActivity {
@@ -148,4 +151,29 @@ public class    MainActivity_doan_hinh extends AppCompatActivity {
         });
         answerLayout.addView(rg);
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("BUGBUG","onStop() in MainActivity_doan_hinh");
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("BUGBUG","onDestroy() in MainActivity_doan_hinh");
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(MainActivity_doan_hinh.this, MainActivity_start_doan_hinh.class);
+        startActivity(intent);
+        finish();
+
+        super.onBackPressed();
+    }
+
 }
