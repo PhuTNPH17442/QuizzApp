@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.quizzapp.MainActivity;
 import com.example.quizzapp.MenuGameActivity;
 import com.example.quizzapp.R;
+import com.example.quizzapp.quizzLDSection.Activities.QuizActivity;
 import com.example.quizzapp.quizzLDSection.Activities.ResultActivity;
 
 public class ResultActivity_doan_hinh extends AppCompatActivity {
@@ -44,7 +45,8 @@ public class ResultActivity_doan_hinh extends AppCompatActivity {
         btnRestar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ResultActivity_doan_hinh.super.onBackPressed();
+                Intent intent1 = new Intent(ResultActivity_doan_hinh.this, MainActivity_doan_hinh.class);
+                startActivity(intent1);
             }
         });
         Button btnhome = findViewById(R.id.btnhome);
