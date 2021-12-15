@@ -29,6 +29,8 @@
         <activity android:name=".quizzLDSection.Activities.ResultActivity" />
         <activity android:name=".quizzLDSection.Activities.QuizActivity" />
         <activity android:name=".quizzLDSection.Activities.HistoryLevelsActivity" />
+        <activity android:name=".quizzLDSection.Activities.GeographyLevelsActivity" />
+        <activity android:name=".quizzLDSection.Activities.ScienceLevelsActivity" />
         <activity
             android:name=".guessword.MainActivity2"
             android:exported="false" />

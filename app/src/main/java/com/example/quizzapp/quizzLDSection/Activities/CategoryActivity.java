@@ -26,15 +26,15 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
         btnAll = findViewById(R.id.btn_All);
         btnHistory = findViewById(R.id.btn_History);
-        btnMath = findViewById(R.id.btn_Math);
-        btnEnglish = findViewById(R.id.btn_English);
+//        btnMath = findViewById(R.id.btn_Math);
+//        btnEnglish = findViewById(R.id.btn_English);
         btnGeography = findViewById(R.id.btn_Geography);
         btnScience = findViewById(R.id.btn_Science);
 
         btnAll.setOnClickListener(this);
         btnHistory.setOnClickListener(this);
-        btnMath.setOnClickListener(this);
-        btnEnglish.setOnClickListener(this);
+//        btnMath.setOnClickListener(this);
+//        btnEnglish.setOnClickListener(this);
         btnGeography.setOnClickListener(this);
         btnScience.setOnClickListener(this);
     }
@@ -58,18 +58,18 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
                 intentHistory.putExtra("Category", CategoryConstants.HISTORY); //truyền dữ liệu Category - history đến HistoryLevelsActivity
                 startActivity(intentHistory);
                 break;
-            case R.id.btn_Math:
-
-                Intent intentMath = new Intent(CategoryActivity.this, AllLevelsActivity.class);
-                intentMath.putExtra("Category", CategoryConstants.MATHS);
-                startActivity(intentMath);
-                break;
-            case R.id.btn_English:
-
-                Intent intentEnglish = new Intent(CategoryActivity.this, AllLevelsActivity.class);
-                intentEnglish.putExtra("Category", CategoryConstants.ENGLISH);
-                startActivity(intentEnglish);
-                break;
+//            case R.id.btn_Math:
+//
+//                Intent intentMath = new Intent(CategoryActivity.this, AllLevelsActivity.class);
+//                intentMath.putExtra("Category", CategoryConstants.MATHS);
+//                startActivity(intentMath);
+//                break;
+//            case R.id.btn_English:
+//
+//                Intent intentEnglish = new Intent(CategoryActivity.this, AllLevelsActivity.class);
+//                intentEnglish.putExtra("Category", CategoryConstants.ENGLISH);
+//                startActivity(intentEnglish);
+//                break;
             case R.id.btn_Geography:
 
                 createLevelsForGeography();
