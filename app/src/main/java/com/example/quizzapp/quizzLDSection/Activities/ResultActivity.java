@@ -1,5 +1,6 @@
 package com.example.quizzapp.quizzLDSection.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quizzapp.MainActivity;
 import com.example.quizzapp.R;
+import com.example.quizzapp.quizzLDSection.constants.CategoryConstants;
+import com.example.quizzapp.quizzLDSection.constants.Constant;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -133,23 +136,161 @@ public class ResultActivity extends AppCompatActivity {
 
         if (categoryAgainValue.equals("All")) {
 
+            createLevelsForAll();
             Intent intentAll = new Intent(ResultActivity.this, AllLevelsActivity.class);
+            intentAll.putExtra("Category", CategoryConstants.ALL);
             startActivity(intentAll);
 
         } else if (categoryAgainValue.equals("History")) {
 
+            createLevelsForHistory();
             Intent intentHistory = new Intent(ResultActivity.this, HistoryLevelsActivity.class);
+            intentHistory.putExtra("Category", CategoryConstants.HISTORY);
             startActivity(intentHistory);
 
         } else if (categoryAgainValue.equals("Geography")) {
 
+            createLevelsForGeography();
             Intent intentGepgraphy = new Intent(ResultActivity.this, GeographyLevelsActivity.class);
+            intentGepgraphy.putExtra("Category", CategoryConstants.GEOGRAPHY);
             startActivity(intentGepgraphy);
+
         } else if (categoryAgainValue.equals("Science")) {
 
+            createLevelsForScience();
             Intent intentScience = new Intent(ResultActivity.this, ScienceLevelsActivity.class);
+            intentScience.putExtra("Category", CategoryConstants.SCIENCE);
             startActivity(intentScience);
         }
 
+    }
+
+    // 1 = unlocked  &  0 = locked
+    private void createLevelsForAll() {
+
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(getPackageName() + Constant.MY_LEVEL_PREFFILE, Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(Constant.KEY_ALL_LEVEL_1, 1); // mặc định Level 1 đã đc unlocked
+        editor.putString(Constant.KEY_CAT_ALL_LEVEL_1, "Unlock");
+        editor.apply();
+
+        if (sharedPreferences.getString(Constant.KEY_CAT_ALL_LEVEL_1, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_ALL_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_ALL_LEVEL_2, 0);
+            editor.putInt(Constant.KEY_ALL_LEVEL_3, 0);
+
+        }else if (sharedPreferences.getString(Constant.KEY_CAT_ALL_LEVEL_2, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_ALL_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_ALL_LEVEL_2, 1);
+            editor.putInt(Constant.KEY_ALL_LEVEL_3, 0);
+
+        }else if (sharedPreferences.getString(Constant.KEY_CAT_ALL_LEVEL_3, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_ALL_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_ALL_LEVEL_2, 1);
+            editor.putInt(Constant.KEY_ALL_LEVEL_3, 1);
+
+        }
+    }
+
+
+    // 1 = unlocked  &  0 = locked
+    private void createLevelsForHistory() {
+        //Su dung SharedPreferences de luu tru thong tin
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(getPackageName() + Constant.MY_LEVEL_PREFFILE, Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(Constant.KEY_HIS_LEVEL_1, 1); // mặc định Level 1 đã đc unlocked
+        editor.putString(Constant.KEY_CAT_HIS_LEVEL_1, "Unlock");
+        editor.apply();
+
+        if (sharedPreferences.getString(Constant.KEY_CAT_HIS_LEVEL_1, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_HIS_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_HIS_LEVEL_2, 0);
+            editor.putInt(Constant.KEY_HIS_LEVEL_3, 0);
+
+        }else if (sharedPreferences.getString(Constant.KEY_CAT_HIS_LEVEL_2, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_HIS_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_HIS_LEVEL_2, 1);
+            editor.putInt(Constant.KEY_HIS_LEVEL_3, 0);
+
+        }else if (sharedPreferences.getString(Constant.KEY_CAT_HIS_LEVEL_3, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_HIS_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_HIS_LEVEL_2, 1);
+            editor.putInt(Constant.KEY_HIS_LEVEL_3, 1);
+
+        }
+    }
+
+    // 1 = unlocked  &  0 = locked
+    private void createLevelsForGeography() {
+        //Su dung SharedPreferences de luu tru thong tin
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(getPackageName() + Constant.MY_LEVEL_PREFFILE, Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(Constant.KEY_GEO_LEVEL_1, 1); // mặc định Level 1 đã đc unlocked
+        editor.putString(Constant.KEY_CAT_GEO_LEVEL_1, "Unlock");
+        editor.apply();
+
+        if (sharedPreferences.getString(Constant.KEY_CAT_GEO_LEVEL_1, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_GEO_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_GEO_LEVEL_2, 0);
+            editor.putInt(Constant.KEY_GEO_LEVEL_3, 0);
+
+        }else if (sharedPreferences.getString(Constant.KEY_CAT_GEO_LEVEL_2, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_GEO_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_GEO_LEVEL_2, 1);
+            editor.putInt(Constant.KEY_GEO_LEVEL_3, 0);
+
+        }else if (sharedPreferences.getString(Constant.KEY_CAT_GEO_LEVEL_3, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_GEO_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_GEO_LEVEL_2, 1);
+            editor.putInt(Constant.KEY_GEO_LEVEL_3, 1);
+
+        }
+    }
+
+    // 1 = unlocked  &  0 = locked
+    private void createLevelsForScience() {
+        //Su dung SharedPreferences de luu tru thong tin
+        SharedPreferences sharedPreferences =
+                getSharedPreferences(getPackageName() + Constant.MY_LEVEL_PREFFILE, Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(Constant.KEY_SCI_LEVEL_1, 1); // mặc định Level 1 đã đc unlocked
+        editor.putString(Constant.KEY_CAT_SCI_LEVEL_1, "Unlock");
+        editor.apply();
+
+        if (sharedPreferences.getString(Constant.KEY_CAT_SCI_LEVEL_1, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_SCI_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_SCI_LEVEL_2, 0);
+            editor.putInt(Constant.KEY_SCI_LEVEL_3, 0);
+
+        }else if (sharedPreferences.getString(Constant.KEY_CAT_SCI_LEVEL_2, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_SCI_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_SCI_LEVEL_2, 1);
+            editor.putInt(Constant.KEY_SCI_LEVEL_3, 0);
+
+        }else if (sharedPreferences.getString(Constant.KEY_CAT_SCI_LEVEL_3, "N/A").equals("Unlock")) {
+
+            editor.putInt(Constant.KEY_SCI_LEVEL_1, 1);
+            editor.putInt(Constant.KEY_SCI_LEVEL_2, 1);
+            editor.putInt(Constant.KEY_SCI_LEVEL_3, 1);
+
+        }
     }
 }
