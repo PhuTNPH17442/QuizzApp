@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 import me.relex.circleindicator.CircleIndicator;
 
 public class CreditsActivity extends AppCompatActivity {
-private TextView tvSkip;
+private TextView tvSkip, tvNext;
 private ViewPager viewPager;
 private RelativeLayout layoutbottom;
 private CircleIndicator circleIndicator;
@@ -52,6 +53,7 @@ private ViewPagerAdapter viewPagerAdapter;
     }
     private void initUI(){
         tvSkip = findViewById(R.id.tv_skip);
+        tvNext = findViewById(R.id.tv_next);
         viewPager = findViewById(R.id.view_paper);
         layoutbottom = findViewById(R.id.layout_bottom);
         circleIndicator = findViewById(R.id.circle_indicator);
@@ -71,5 +73,13 @@ private ViewPagerAdapter viewPagerAdapter;
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(CreditsActivity.this, SettingActivity.class);
+        startActivity(intent);
     }
 }

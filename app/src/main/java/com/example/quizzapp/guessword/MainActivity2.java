@@ -165,12 +165,34 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
 //                que = question[random.nextInt(question.length)];
 //                txtQuestionContainer.setText(mixWords(que));
-                if (edYourAnswer.getText().toString().equals("")) {
-                    Toast.makeText(getApplicationContext(), "Bạn chưa điền đáp án", Toast.LENGTH_SHORT).show();
-                } else {
-                    countDownTimer.cancel();
-                    showQuestion();
-                }
+//                if (edYourAnswer.getText().toString().equals("")) {
+//                    Toast.makeText(getApplicationContext(), "Bạn chưa điền đáp án", Toast.LENGTH_SHORT).show();
+//                } else {
+                //dialog hiển thị báo đáp án sai
+                Dialog dialog = new Dialog(MainActivity2.this);
+                dialog.setContentView(R.layout.wrong_dialog);
+                Button hide = dialog.findViewById(R.id.btn_wrong_dialog);
+
+                TextView txtCauDung = dialog.findViewById(R.id.tv_correct_answer);
+                txtCauDung.setText("" + que);
+
+                //audio báo sai
+                FLAG = 2;
+                playAudioForAnswer.setAudioForAnswer(FLAG);
+                wrongAns++;
+                txtCauSai.setText("Câu sai : " + String.valueOf(wrongAns));
+                dialog.show();
+                hide.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                        countDownTimer.cancel();
+                        showQuestion();
+                    }
+                });
+//                countDownTimer.cancel();
+//                showQuestion();
+//                }
                 edYourAnswer.setText("");
                 txtCorrectAnswer.setVisibility(View.INVISIBLE);
                 txtRightAnswer.setVisibility(View.INVISIBLE);

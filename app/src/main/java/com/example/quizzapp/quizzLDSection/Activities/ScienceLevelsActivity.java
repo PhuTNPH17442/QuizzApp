@@ -28,7 +28,7 @@ public class ScienceLevelsActivity extends AppCompatActivity implements View.OnC
 
     int SL1, SL2, SL3; //
 
-    TextView tvLevel1, tvLevel2, tvLevel3;
+//    TextView tvLevel1, tvLevel2, tvLevel3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +43,9 @@ public class ScienceLevelsActivity extends AppCompatActivity implements View.OnC
 //        btnLevel2.setOnClickListener(this);
 //        btnLevel3.setOnClickListener(this);
 
-        tvLevel1 = findViewById(R.id.tvLevel1);
-        tvLevel2 = findViewById(R.id.tvLevel2);
-        tvLevel3 = findViewById(R.id.tvLevel3);
+//        tvLevel1 = findViewById(R.id.tvLevel1);
+//        tvLevel2 = findViewById(R.id.tvLevel2);
+//        tvLevel3 = findViewById(R.id.tvLevel3);
 
 
         lockAndUnlockLevels();
@@ -92,13 +92,13 @@ public class ScienceLevelsActivity extends AppCompatActivity implements View.OnC
 
     }
 
-    public void LoadData(View view) {
-
-        tvLevel1.setText(String.valueOf(SL1));
-        tvLevel2.setText(String.valueOf(SL2));
-        tvLevel3.setText(String.valueOf(SL3));
-
-    }
+//    public void LoadData(View view) {
+//
+//        tvLevel1.setText(String.valueOf(SL1));
+//        tvLevel2.setText(String.valueOf(SL2));
+//        tvLevel3.setText(String.valueOf(SL3));
+//
+//    }
 
     private void lockAndUnlockLevels() {
 

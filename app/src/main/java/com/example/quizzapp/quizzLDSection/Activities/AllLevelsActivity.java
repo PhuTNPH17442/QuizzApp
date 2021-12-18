@@ -27,10 +27,11 @@ public class AllLevelsActivity extends AppCompatActivity implements View.OnClick
     Button btnLevel1, btnLevel2, btnLevel3;
 
     String CategoryValue = "";
+    int levelsID = 0;
 
     int AL1, AL2, AL3; // All level - All: Tong hop, khong phai toan bo
 
-    TextView tvLevel1, tvLevel2, tvLevel3;
+//    TextView tvLevel1, tvLevel2, tvLevel3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +46,9 @@ public class AllLevelsActivity extends AppCompatActivity implements View.OnClick
 //        btnLevel2.setOnClickListener(this);
 //        btnLevel3.setOnClickListener(this);
 
-        tvLevel1 = findViewById(R.id.tvLevel1);
-        tvLevel2 = findViewById(R.id.tvLevel2);
-        tvLevel3 = findViewById(R.id.tvLevel3);
+//        tvLevel1 = findViewById(R.id.tvLevel1);
+//        tvLevel2 = findViewById(R.id.tvLevel2);
+//        tvLevel3 = findViewById(R.id.tvLevel3);
 
 
         lockAndUnlockLevels();
@@ -55,6 +56,7 @@ public class AllLevelsActivity extends AppCompatActivity implements View.OnClick
 
         Intent intentCategory = getIntent();
         CategoryValue = intentCategory.getStringExtra("Category");
+//        levelsID = intentCategory.getIntExtra("Level", 0);
 
 
     }
@@ -94,13 +96,13 @@ public class AllLevelsActivity extends AppCompatActivity implements View.OnClick
 
     }
 
-    public void LoadData(View view) {
-
-        tvLevel1.setText(String.valueOf(AL1));
-        tvLevel2.setText(String.valueOf(AL2));
-        tvLevel3.setText(String.valueOf(AL3));
-
-    }
+//    public void LoadData(View view) {
+//
+//        tvLevel1.setText(String.valueOf(AL1));
+//        tvLevel2.setText(String.valueOf(AL2));
+//        tvLevel3.setText(String.valueOf(AL3));
+//
+//    }
 
     private void lockAndUnlockLevels() {
 

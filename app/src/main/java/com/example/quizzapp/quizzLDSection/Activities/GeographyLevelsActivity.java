@@ -29,7 +29,7 @@ public class GeographyLevelsActivity extends AppCompatActivity implements View.O
 
     int GL1, GL2, GL3; //Geography Levels
 
-    TextView tvLevel1, tvLevel2, tvLevel3;
+//    TextView tvLevel1, tvLevel2, tvLevel3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +44,9 @@ public class GeographyLevelsActivity extends AppCompatActivity implements View.O
 //        btnLevel2.setOnClickListener(this);
 //        btnLevel3.setOnClickListener(this);
 
-        tvLevel1 = findViewById(R.id.tvLevel1);
-        tvLevel2 = findViewById(R.id.tvLevel2);
-        tvLevel3 = findViewById(R.id.tvLevel3);
+//        tvLevel1 = findViewById(R.id.tvLevel1);
+//        tvLevel2 = findViewById(R.id.tvLevel2);
+//        tvLevel3 = findViewById(R.id.tvLevel3);
 
 
         lockAndUnlockLevels();
@@ -93,13 +93,13 @@ public class GeographyLevelsActivity extends AppCompatActivity implements View.O
 
     }
 
-    public void LoadData(View view) {
-
-        tvLevel1.setText(String.valueOf(GL1));
-        tvLevel2.setText(String.valueOf(GL2));
-        tvLevel3.setText(String.valueOf(GL3));
-
-    }
+//    public void LoadData(View view) {
+//
+//        tvLevel1.setText(String.valueOf(GL1));
+//        tvLevel2.setText(String.valueOf(GL2));
+//        tvLevel3.setText(String.valueOf(GL3));
+//
+//    }
 
     private void lockAndUnlockLevels() {
 
